@@ -385,14 +385,12 @@ export default async function Home() {
             Software builder, data nerd, not a robot.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              👋 You've reached Daniel Furman's website. I'm a data scientist based in beautiful San Francisco.
+              👋 You&#39;ve reached Daniel Furman&#39;s website. I&#39;m a data scientist based in beautiful San Francisco.
               I <Link href="/articles" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">blog</Link>. I{' '}
               <Link href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">tweet</Link>. I{' '}
               <Link href="https://github.com/daniel-furman" target="_blank" rel="noopener noreferrer" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">code</Link>.
               Among other things, I like interesting datasets and large neural networks. 
-              If you want to get in touch, don't hesitate to drop me a line.
-
-
+              If you want to get in touch, don&#39;t hesitate to drop me a line.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
