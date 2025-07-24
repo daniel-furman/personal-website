@@ -73,7 +73,8 @@ export default function About() {
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
             Data scientist focused on building GenAI products that customers value. Passionate about contributing to the AI revolution from its epicenter, the San Francisco Bay Area.
-            <br></br>
+            </p>
+            <p>
             Favorite quote: “All models are wrong, but some are useful.” - George Box
             </p>
           </div>
