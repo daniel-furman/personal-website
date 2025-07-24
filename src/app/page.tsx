@@ -382,7 +382,7 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            Software builder, data nerd, not a robot.
+            Not an AI.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
               👋 You&#39;ve reached Daniel Furman&#39;s website. <br></br>
