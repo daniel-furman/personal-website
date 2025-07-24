@@ -72,7 +72,7 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-            I work as a data scientist focused on building GenAI products that customers love. Excited to be contributing to the AI revolution from the heart of the Bay Area.<br></br>
+            Data scientist focused on building GenAI products that customers value. Passionate about contributing to the AI revolution from its epicenter, the San Francisco Bay Area. <br></br>
             <br></br>
             Favorite quote: “All models are wrong, but some are useful.” - George Box
             </p>
