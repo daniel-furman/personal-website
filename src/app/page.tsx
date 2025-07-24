@@ -386,7 +386,7 @@ export default async function Home() {
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
               👋 You&#39;ve reached Daniel Furman&#39;s website. <br></br>
-              I work as a data scientist at a startup that&#39;s trying to change how freight works. I do this from San Francisco. Contact me at the socials linked below, or drop me a line at <a href="mailto:dryanfurman@gmail.com" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">dryanfurman@gmail.com</a>.
+              I work as a data scientist at a startup that&#39;s trying to change how freight works. I do this from San Francisco; originally from Los Angeles. <br> <br></br>My socials are linked below and/or drop me a line at <a href="mailto:dryanfurman@gmail.com" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">dryanfurman@gmail.com</a>.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
