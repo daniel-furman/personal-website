@@ -68,14 +68,11 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          I'm Daniel Furman
+          👋 There!
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-            I work as a data scientist and am focused on building GenAI products that customers value. I'm excited about contributing to the AI revolution from its epicenter, the San Francisco Bay Area.
-            </p>
-            <p>
-            Favorite quote: “All models are wrong, but some are useful.” - George Box
+            I'm Daniel Furman, and this is my website. A short about me blurb: Data scientist focused on building GenAI products that customers value. Excited about contributing to the AI revolution from its epicenter, the San Francisco Bay Area. One of my favorite quote is from George Box: “All models are wrong, but some are useful”.
             </p>
           </div>
         </div>
