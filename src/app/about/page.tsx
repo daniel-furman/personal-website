@@ -49,7 +49,7 @@ function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
 export const metadata: Metadata = {
   title: 'About',
   description:
-    'I’m Daniel Furman, I live in San Francisco. Busy building.',
+    'Data Scientist living in San Francisco',
 }
 
 export default function About() {
@@ -68,7 +68,7 @@ export default function About() {
         </div>
         <div className="lg:order-first lg:row-span-2">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-          I’m Daniel Furman, I live in San Francisco. Busy building.
+          Data Scientist living in San Francisco
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
