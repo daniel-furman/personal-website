@@ -50,16 +50,15 @@ export default function Uses() {
           <Tool title="14” MacBook Pro, M1 Pro, 16GB RAM (2021)">
             I was using an Intel-based 16” MacBook Pro prior to this and the
             difference is night and day. Fans that are not constantly running 
-            are a welcome change. Apple kinda cooked with this one, not gonna lie.
+            is a more than welcome change. Apple kinda cooked here, not gonna lie.
           </Tool>
           <Tool title="Apple Studio Display">
             Totally splurged on this one. I’m a sucker for a good display, and this 
-            one is a beauty.
+            one does not disappoint.
           </Tool>
           <Tool title="Varmilo Minilo 75% with Kailh Presitge Silent Switches">
-            Best keyboard I’ve ever used. Turns the mundane task of typing into a 
-            pleasurable experience. Too boot the switches are dead silent - no 
-            bothering coworkers with this mechanical keyboard.
+            Best keyboard I’ve ever used. Makes typing a delight. Inspo from 
+            <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH's blog post</a>.
           </Tool>
           <Tool title="Apple Magic Trackpad">
             Something about all the gestures makes me feel like a wizard with
