@@ -53,11 +53,11 @@ export default function Uses() {
             are a welcome change. Apple kinda cooked with this one, not gonna lie.
           </Tool>
           <Tool title="Apple Studio Display">
-            Totally splurged on this one. I'm a sucker for a good display, and this 
+            Totally splurged on this one. I’m a sucker for a good display, and this 
             one is a beauty.
           </Tool>
           <Tool title="Varmilo Minilo 75% with Kailh Presitge Silent Switches">
-            Best keyboard I've ever used. Turns the mundane task of typing into a 
+            Best keyboard I’ve ever used. Turns the mundane task of typing into a 
             pleasurable experience. Too boot the switches are dead silent - no 
             bothering coworkers with this mechanical keyboard.
           </Tool>
@@ -66,7 +66,7 @@ export default function Uses() {
             special powers. I really like that feeling.
           </Tool>
           <Tool title="Herman Miller Sayl Chair">
-            Might as well sit in a chair that's designed to be comfortable.
+            Might as well sit in a chair that’s designed to be comfortable.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
@@ -74,7 +74,7 @@ export default function Uses() {
             Obviously.
           </Tool>
           <Tool title="Claude Code">
-            Best agentic AI coding tool I've used.
+            Best agentic AI coding tool I’ve used.
           </Tool>
           <Tool title="Promptfoo">
             Best package for evals out there.
@@ -87,7 +87,7 @@ export default function Uses() {
         </ToolsSection>
         <ToolsSection title="Productivity">
           <Tool title="Notion">
-            Pretty good docs tool, waiting to try one that is better.
+            Pretty decent docs platform, waiting to try one that is better.
           </Tool>
           <Tool title="Jira">
             Because I have to.
