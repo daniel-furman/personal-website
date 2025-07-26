@@ -258,6 +258,13 @@ function Resume() {
 
 function Photos() {
   let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
+  let captions = [
+    'Exploring the California coast',
+    'Hiking in the mountains',
+    'City life in San Francisco',
+    'Coffee and code',
+    'Weekend adventures'
+  ]
 
   return (
     <div className="mt-16 sm:mt-20">
@@ -265,17 +272,24 @@ function Photos() {
         {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
           <div
             key={image.src}
-            className={clsx(
-              'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
-              rotations[imageIndex % rotations.length],
-            )}
+            className="flex flex-col items-center"
           >
-            <Image
-              src={image}
-              alt=""
-              sizes="(min-width: 640px) 18rem, 11rem"
-              className="absolute inset-0 h-full w-full object-cover"
-            />
+            <div
+              className={clsx(
+                'relative aspect-9/10 w-44 flex-none overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+                rotations[imageIndex % rotations.length],
+              )}
+            >
+              <Image
+                src={image}
+                alt=""
+                sizes="(min-width: 640px) 18rem, 11rem"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </div>
+            <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400 text-center max-w-44 sm:max-w-72">
+              {captions[imageIndex]}
+            </p>
           </div>
         ))}
       </div>
