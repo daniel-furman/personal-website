@@ -1,6 +1,9 @@
+'use client'
+
 import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
+import { useEffect, useRef } from 'react'
 
 import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
@@ -258,6 +261,8 @@ function Resume() {
 }
 
 function Photos() {
+  const scrollContainerRef = useRef<HTMLDivElement>(null)
+  
   // Arrays that automatically scale - just add new items to extend
   const images = [image1, image2, image3, image4, image5, image6]
   const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2']
@@ -270,12 +275,46 @@ function Photos() {
     'Sunset views'
   ]
 
+  // Create infinite scroll by duplicating images
+  const infiniteImages = [...images, ...images, ...images]
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current
+    if (!scrollContainer) return
+
+    const handleScroll = () => {
+      const { scrollLeft, scrollWidth, clientWidth } = scrollContainer
+      const imageWidth = 176 + 20 // w-44 (176px) + gap-5 (20px)
+      
+      // If scrolled to the end of the middle set, jump to the beginning of the middle set
+      if (scrollLeft >= scrollWidth - clientWidth - imageWidth) {
+        scrollContainer.scrollLeft = scrollWidth / 3
+      }
+      // If scrolled to the beginning of the middle set, jump to the end of the middle set
+      else if (scrollLeft <= imageWidth) {
+        scrollContainer.scrollLeft = scrollWidth / 3 * 2
+      }
+    }
+
+    scrollContainer.addEventListener('scroll', handleScroll)
+    
+    // Initialize scroll position to the middle set
+    scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3
+
+    return () => {
+      scrollContainer.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
+
   return (
     <div className="mt-16 sm:mt-20">
-      <div className="flex overflow-x-auto gap-5 py-4 px-4 sm:gap-8 sm:px-8 scrollbar-hide">
-        {images.map((image, imageIndex) => (
+      <div 
+        ref={scrollContainerRef}
+        className="flex overflow-x-auto gap-5 py-4 px-4 sm:gap-8 sm:px-8 scrollbar-hide"
+      >
+        {infiniteImages.map((image, imageIndex) => (
           <div
-            key={image.src}
+            key={`${image.src}-${imageIndex}`}
             className="flex flex-col items-center flex-shrink-0"
           >
             <div
@@ -295,7 +334,7 @@ function Photos() {
               'mt-2 text-[0.7rem] text-zinc-400 dark:text-zinc-500 text-center max-w-44 sm:max-w-72',
               rotations[imageIndex % rotations.length],
             )}>
-              {captions[imageIndex]}
+              {captions[imageIndex % captions.length]}
             </p>
           </div>
         ))}
@@ -406,7 +445,7 @@ export default async function Home() {
             Not an AI.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              You’ve reached Daniel Furman’s website. I’m a data scientist living in San Francisco. To get in touch, drop me a line at <a href="mailto:dryanfurman@gmail.com" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">dryanfurman@gmail.com</a>.
+              You’ve reached Daniel Furman’s website. I’m a data scientist living in San Francisco. Among other things, I like taking photos (evidenced below). To get in touch, drop me a line at <a href="mailto:dryanfurman@gmail.com" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">dryanfurman@gmail.com</a>.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
