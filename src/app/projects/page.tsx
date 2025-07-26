@@ -35,7 +35,7 @@ const projects = [
     name: 'Awesome ChatGPT prompts',
     description:
       'Text clustering: HDBSCAN is probably all you need. ',
-    link: { href: '#', label: 'hdbscan.tech' },
+    link: { href: 'https://github.com/daniel-furman/awesome-chatgpt-prompts-clustering', label: 'hdbscan.tech' },
     logo: logoHelioStream,
   }
 ]
