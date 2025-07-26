@@ -266,9 +266,9 @@ function Photos() {
   const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
   const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
   const captions = [
-    'Chestnut street at twilight - Jan 2025',
-    'Ride in the headlands - Jun 2020',
-    'Bike ride views - Jan 2025', 
+    'Chestnut street at twilight - Feb 2025',
+    'Ride in the headlands - Jul 2025',
+    'Golden gate views - Jan 2025', 
     'Ocean beach surf - Feb 2022',
     'Tank hill - Jun 2020',
     'Big Sur - Dec 2016',
@@ -395,6 +395,11 @@ export default async function Home() {
               href="https://www.linkedin.com/in/daniel-ryan-furman/" target="_blank" rel="noopener noreferrer"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
+            />
+            <SocialLink
+              href="https://instagram.com/dannyfurman" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow on Instagram"
+              icon={InstagramIcon}
             />
           </div>
         </div>
