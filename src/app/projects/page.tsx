@@ -11,19 +11,19 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
+    name: 'Polyglot or Not?',
+    description:
+      'Measuring multilingual encyclopedic knowledge in foundation models.',
+    link: { href: 'https://aclanthology.org/2023.emnlp-main.691/', label: 'emnlp-main-2023.papers' },
+    logo: logoPlanetaria,
+  },
+  {
     name: 'sft-demos',
     description:
       'Lightweight demos for finetuning LLMs. Powered by transformers and open-source data.',
     link: { href: 'https://github.com/daniel-furman/sft-demos', label: 'sft-demos.tech' },
     logo: logoOpenShuttle,
-  },
-  {
-    name: 'Polyglot or Not?',
-    description:
-      'Measuring multilingual encyclopedic knowledge in foundation models.',
-    link: { href: 'https://aclanthology.org/2023.emnlp-main.691/', label: 'emnlp-main-2023.papers' },
-    logo: logoAnimaginary,
-  },
+  },  
   {
     name: 'HelioStream',
     description:
@@ -43,7 +43,7 @@ const projects = [
     description:
       'The schematics for the first rocket I designed that successfully made it to orbit.',
     link: { href: '#', label: 'github.com' },
-    logo: logoOpenShuttle,
+    logo: logoAnimaginary,
   },
 ]
 
