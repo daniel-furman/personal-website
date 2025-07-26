@@ -74,7 +74,7 @@ export default function About() {
             <p>
              My name is Daniel Furman. I&apos;m a data scientist focused on building GenAI products that customers value. These days, I get excited about contributing to the AI revolution from its epicenter, the San Francisco Bay Area. 
             <br></br><br></br>
-            One of my favorite quotes, from statistician George Box: <span className="font-serif italic">&ldquo;All models are wrong, but some are useful&rdquo;.</span>
+            One of my favorite quotes, from statistician George Box: <em>“All models are wrong, but some are useful”</em>.
             </p>
           </div>
         </div>
