@@ -287,7 +287,10 @@ function Photos() {
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
-            <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400 text-center max-w-44 sm:max-w-72">
+            <p className={clsx(
+              'mt-3 text-xs text-zinc-500 dark:text-zinc-400 text-center max-w-44 sm:max-w-72',
+              rotations[imageIndex % rotations.length],
+            )}>
               {captions[imageIndex]}
             </p>
           </div>
