@@ -15,7 +15,7 @@ const projects = [
     description:
       'Measuring multilingual encyclopedic knowledge in foundation models.',
     link: { href: 'https://aclanthology.org/2023.emnlp-main.691/', label: 'emnlp-main-2023.papers' },
-    logo: logoPlanetaria,
+    logo: logoAnimaginary,
   },
   {
     name: 'sft-demos',
@@ -29,14 +29,14 @@ const projects = [
     description:
       'A Python tutorial for geospatial classification.',
     link: { href: 'https://github.com/daniel-furman/Python-species-distribution-modeling', label: 'pysdms.tech' },
-    logo: logoHelioStream,
+    logo: logoPlanetaria,
   },
   {
     name: 'Awesome ChatGPT prompts',
     description:
       'Text clustering: HDBSCAN is probably all you need. ',
     link: { href: '#', label: 'hdbscan.tech' },
-    logo: logoCosmos,
+    logo: logoHelioStream,
   }
 ]
 
