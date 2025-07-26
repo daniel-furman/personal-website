@@ -27,7 +27,7 @@ const projects = [
   {
     name: 'Species distribution modeling',
     description:
-      'A Python tutorial for geospatial classification.',
+      'A Python tutorial and autoML package for geospatial modeling.',
     link: { href: 'https://github.com/daniel-furman/Python-species-distribution-modeling', label: 'pysdms.tech' },
     logo: logoPlanetaria,
   },
