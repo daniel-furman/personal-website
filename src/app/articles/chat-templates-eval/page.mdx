@@ -1,0 +1,31 @@
+import { ArticleLayout } from '@/components/ArticleLayout'
+import designSystem from './planetaria-design-system.png'
+
+export const article = {
+  author: 'Daniel Furman',
+  date: '2024-02-01',
+  title: 'LLM Evaluations with Chat Templates',
+  description:
+    'Applying chat templates to generative LM evaluation tests',
+}
+
+export const metadata = {
+  title: article.title,
+  description: article.description,
+}
+
+export default (props) => <ArticleLayout article={article} {...props} />
+
+Chat models are typically fine-tuned on datasets formatted with a prompt template. 
+These chat templates are programmed recipes that convert a chat conversation into a single string. 
+At prediction time, it’s standard to match an LLM’s expected chat format – not doing so is oft-noted as causing performance degradations. 
+However, do we in fact see these degradations on evaluation benchmarks?
+
+Read more at <a
+  href="https://huggingface.co/blog/dfurman/evaluations-with-chat-formats"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:decoration-zinc-600 dark:hover:decoration-zinc-400"
+>
+  https://huggingface.co/blog/dfurman/evaluations-with-chat-formats
+</a>
