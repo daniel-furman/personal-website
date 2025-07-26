@@ -7,12 +7,12 @@ import '@/styles/tailwind.css'
 
 export const metadata: Metadata = {
   title: {
-    template: '%s - Daniel Furman',
+    template: '%s - Daniel R Furman',
     default:
-      'Daniel Furman - Not an AI',
+      'Daniel R Furman',
   },
   description:
-    'Daniel Furman - Not an AI',
+    'Daniel R Furman',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
