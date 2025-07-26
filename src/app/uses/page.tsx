@@ -58,7 +58,7 @@ export default function Uses() {
           <Tool title="Varmilo Minilo 75% with Kailh Presitge Silent Switches">
             Best keyboard I’ve ever used. Makes typing a delight. Purchase inspired 
             by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH’s blog post </a> 
-            on mechanical keyboards. I'm a big fan of the thock.
+            on mechanical keyboards.
           </Tool>
           <Tool title="Apple Magic Trackpad">
             Something about all the gestures makes me feel like a wizard with
