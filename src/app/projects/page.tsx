@@ -13,15 +13,15 @@ const projects = [
   {
     name: 'sft-demos',
     description:
-      'Lightweight demos for finetuning LLMs. Powered by 🤗 transformers and open-source datasets.',
+      'Lightweight demos for finetuning LLMs. Powered by transformers and open-source data.',
     link: { href: 'https://github.com/daniel-furman/sft-demos', label: 'sft-demos.tech' },
     logo: logoOpenShuttle,
   },
   {
-    name: 'Animaginary',
+    name: 'Polyglot or Not?',
     description:
-      'High performance web animation library, hand-written in optimized WASM.',
-    link: { href: '#', label: 'github.com' },
+      'Measuring multilingual encyclopedic knowledge in foundation models.',
+    link: { href: 'https://aclanthology.org/2023.emnlp-main.691/', label: 'emnlp-main-2023.papers' },
     logo: logoAnimaginary,
   },
   {
