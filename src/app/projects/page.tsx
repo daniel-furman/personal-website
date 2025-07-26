@@ -11,6 +11,13 @@ import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
+    name: 'CalmeRys 78B',
+    description:
+      'Cream of the crop of my LLM finetunes.',
+    link: { href: 'https://huggingface.co/dfurman/CalmeRys-78B-Orpo-v0.1', label: 'calmerys.tech' },
+    logo: logoCosmos,
+  },  
+  {
     name: 'Polyglot or Not?',
     description:
       'Measuring multilingual encyclopedic knowledge in foundation models.',
