@@ -25,26 +25,19 @@ const projects = [
     logo: logoOpenShuttle,
   },  
   {
-    name: 'HelioStream',
+    name: 'Species distribution modeling',
     description:
-      'Real-time video streaming library, optimized for interstellar transmission.',
-    link: { href: '#', label: 'github.com' },
+      'A Python tutorial for geospatial classification.',
+    link: { href: 'https://github.com/daniel-furman/Python-species-distribution-modeling', label: 'pysdms.tech' },
     logo: logoHelioStream,
   },
   {
-    name: 'cosmOS',
+    name: 'Awesome ChatGPT prompts',
     description:
-      'The operating system that powers our Planetaria space shuttles.',
-    link: { href: '#', label: 'github.com' },
+      'Text clustering: HDBSCAN is probably all you need. ',
+    link: { href: '#', label: 'hdbscan.tech' },
     logo: logoCosmos,
-  },
-  {
-    name: 'OpenShuttle',
-    description:
-      'The schematics for the first rocket I designed that successfully made it to orbit.',
-    link: { href: '#', label: 'github.com' },
-    logo: logoAnimaginary,
-  },
+  }
 ]
 
 function LinkIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
@@ -66,8 +59,8 @@ export const metadata: Metadata = {
 export default function Projects() {
   return (
     <SimpleLayout
-      title="Things I’ve made."
-      intro="Projects and research from over the years. Putting my dent in the universe."
+      title="Things I’ve made in the open."
+      intro="My open-source projects and open-science research."
     >
       <ul
         role="list"
