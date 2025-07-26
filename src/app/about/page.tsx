@@ -72,13 +72,13 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-             My name is Daniel Furman. I'm a data scientist focused on building GenAI products that customers value. These days, I get excited about contributing to the AI revolution from its epicenter, the San Francisco Bay Area. 
+             My name is Daniel Furman. I&apos;m a data scientist focused on building GenAI products that customers value. These days, I get excited about contributing to the AI revolution from its epicenter, the San Francisco Bay Area. 
             </p>
             
             <blockquote className="relative border-l-4 border-teal-500 pl-6 py-4 my-8 bg-zinc-50 dark:bg-zinc-800/50 rounded-r-lg">
               <div className="absolute -left-2 top-6 w-4 h-4 bg-teal-500 rounded-full"></div>
               <p className="text-lg font-medium text-zinc-800 dark:text-zinc-200 italic">
-                "All models are wrong, but some are useful"
+                &ldquo;All models are wrong, but some are useful&rdquo;
               </p>
               <footer className="mt-2 text-sm text-zinc-500 dark:text-zinc-400">
                 — George Box, Statistician
