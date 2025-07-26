@@ -24,6 +24,8 @@ import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
 import image6 from '@/images/photos/image-6.jpg'
 import image7 from '@/images/photos/image-7.jpg'
+import image8 from '@/images/photos/image-8.jpg'
+import image9 from '@/images/photos/image-9.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -261,16 +263,18 @@ function Resume() {
 
 function Photos() {
   // Arrays that automatically scale - just add new items to extend
-  const images = [image1, image2, image3, image4, image5, image6, image7]
-  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
+  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
+  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
   const captions = [
-    'Chestnut st at night - Jan 3, 2025',
-    'Hiking in the mountains',
-    'City life in San Francisco',
-    'Coffee and code',
-    'Weekend adventures',
-    'Sunset views',
-    'Mountain peaks'
+    'Chestnut street at twilight - Jan 2025',
+    'Big Sur - Dec 2016',
+    'Bike ride views - Jan 2025', 
+    'Ocean beach surf - Feb 2022',
+    'Tank hill - Jun 2020',
+    'Ride in the headlands - Jun 2020',
+    'Ride near Seattle - Mar 2025',
+    'Marina golden hour - May 2025',
+    'Mallorca views - Jul 2025'
   ]
 
   return <InfinitePhotos images={images} rotations={rotations} captions={captions} />
