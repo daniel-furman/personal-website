@@ -21,6 +21,7 @@ import image2 from '@/images/photos/image-2.jpg'
 import image3 from '@/images/photos/image-3.jpg'
 import image4 from '@/images/photos/image-4.jpg'
 import image5 from '@/images/photos/image-5.jpg'
+import image6 from '@/images/photos/image-6.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -257,19 +258,22 @@ function Resume() {
 }
 
 function Photos() {
-  let rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2']
-  let captions = [
+  // Arrays that automatically scale - just add new items to extend
+  const images = [image1, image2, image3, image4, image5, image6]
+  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2']
+  const captions = [
     'Exploring the California coast',
     'Hiking in the mountains',
     'City life in San Francisco',
     'Coffee and code',
-    'Weekend adventures'
+    'Weekend adventures',
+    'Sunset views'
   ]
 
   return (
     <div className="mt-16 sm:mt-20">
       <div className="flex overflow-x-auto gap-5 py-4 px-4 sm:gap-8 sm:px-8 scrollbar-hide">
-        {[image1, image2, image3, image4, image5].map((image, imageIndex) => (
+        {images.map((image, imageIndex) => (
           <div
             key={image.src}
             className="flex flex-col items-center flex-shrink-0"
@@ -288,7 +292,7 @@ function Photos() {
               />
             </div>
             <p className={clsx(
-              'mt-3 text-xs text-zinc-500 dark:text-zinc-400 text-center max-w-44 sm:max-w-72',
+              'mt-2 text-[0.7rem] text-zinc-400 dark:text-zinc-500 text-center max-w-44 sm:max-w-72',
               rotations[imageIndex % rotations.length],
             )}>
               {captions[imageIndex]}
