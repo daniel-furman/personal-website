@@ -20,7 +20,7 @@ const projects = [
   {
     name: 'sft-demos',
     description:
-      'Lightweight demos for finetuning LLMs. Powered by transformers and open-source data.',
+      'Lightweight demos for finetuning LLMs. Powered by transformers and pytorch.',
     link: { href: 'https://github.com/daniel-furman/sft-demos', label: 'sft-demos.tech' },
     logo: logoOpenShuttle,
   },  
