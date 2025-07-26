@@ -53,24 +53,26 @@ export function InfinitePhotos({ images, rotations, captions }: InfinitePhotosPr
   return (
     <div className="mt-16 sm:mt-20 relative">
       {/* Left fade */}
-      <div className="absolute left-0 top-0 bottom-0 w-8 bg-gradient-to-r from-white to-transparent dark:from-zinc-900 z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white via-white/50 to-transparent dark:from-zinc-900 dark:via-zinc-900/50 z-10 pointer-events-none" />
       {/* Right fade */}
-      <div className="absolute right-0 top-0 bottom-0 w-8 bg-gradient-to-l from-white to-transparent dark:from-zinc-900 z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-white via-white/50 to-transparent dark:from-zinc-900 dark:via-zinc-900/50 z-10 pointer-events-none" />
+      
+      {/* Scroll hint - only shows initially */}
+      {!hasScrolled && (
+        <div className="absolute top-1/2 right-6 transform -translate-y-1/2 z-20 pointer-events-none">
+          <div className="flex items-center space-x-1 bg-white/80 dark:bg-zinc-800/80 px-2 py-1 rounded-full shadow-sm animate-pulse">
+            <span className="text-xs text-zinc-600 dark:text-zinc-300">scroll</span>
+            <svg className="w-3 h-3 text-zinc-600 dark:text-zinc-300" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
+            </svg>
+          </div>
+        </div>
+      )}
+      
       <div 
         ref={scrollContainerRef}
         className="flex overflow-x-auto gap-5 py-4 px-4 sm:gap-8 sm:px-8 scrollbar-hide"
       >
-        {/* Scroll hint - only shows initially */}
-        {!hasScrolled && (
-          <div className="absolute top-1/2 right-4 transform -translate-y-1/2 z-20 pointer-events-none">
-            <div className="flex items-center space-x-1 text-zinc-400 dark:text-zinc-500 animate-pulse">
-              <span className="text-xs">scroll</span>
-              <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-              </svg>
-            </div>
-          </div>
-        )}
         {infiniteImages.map((image, imageIndex) => (
           <div
             key={`${image.src}-${imageIndex}`}
