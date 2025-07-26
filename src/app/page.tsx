@@ -376,7 +376,7 @@ export default async function Home() {
             Not an AI.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              You’ve reached Daniel Furman’s website. I’m a data scientist living in San Francisco. Among other things, I like taking photos (evidenced below). To get in touch, drop me a line at <a href="mailto:dryanfurman@gmail.com" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">dryanfurman@gmail.com</a>.
+              You’ve reached Daniel Furman’s website. I’m a data scientist living in San Francisco. Among other things, I love art and photography. To get in touch, drop me a line at <a href="mailto:dryanfurman@gmail.com" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">dryanfurman@gmail.com</a>.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
