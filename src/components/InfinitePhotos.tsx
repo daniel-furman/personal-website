@@ -13,6 +13,7 @@ interface InfinitePhotosProps {
 export function InfinitePhotos({ images, rotations, captions }: InfinitePhotosProps) {
   const scrollContainerRef = useRef<HTMLDivElement>(null)
   const [hasScrolled, setHasScrolled] = useState(false)
+  const isInitializingRef = useRef(true)
   
   // Create infinite scroll by duplicating images
   const infiniteImages = [...images, ...images, ...images]
@@ -25,8 +26,8 @@ export function InfinitePhotos({ images, rotations, captions }: InfinitePhotosPr
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainer
       const imageWidth = 176 + 20 // w-44 (176px) + gap-5 (20px)
       
-      // Mark that user has scrolled
-      if (!hasScrolled) {
+      // Only mark as scrolled if it's not the initial programmatic scroll
+      if (!hasScrolled && !isInitializingRef.current) {
         setHasScrolled(true)
       }
       
@@ -44,6 +45,11 @@ export function InfinitePhotos({ images, rotations, captions }: InfinitePhotosPr
     
     // Initialize scroll position to the middle set
     scrollContainer.scrollLeft = scrollContainer.scrollWidth / 3
+    
+    // Mark initialization as complete after a short delay
+    setTimeout(() => {
+      isInitializingRef.current = false
+    }, 100)
 
     return () => {
       scrollContainer.removeEventListener('scroll', handleScroll)

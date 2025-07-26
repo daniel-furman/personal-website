@@ -264,7 +264,7 @@ function Photos() {
   const images = [image1, image2, image3, image4, image5, image6, image7]
   const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
   const captions = [
-    'Exploring the California coast',
+    'Chestnut st at night - Jan 3, 2025',
     'Hiking in the mountains',
     'City life in San Francisco',
     'Coffee and code',
