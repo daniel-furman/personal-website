@@ -9,10 +9,10 @@ export const metadata: Metadata = {
   title: {
     template: '%s - Daniel Furman',
     default:
-      'Daniel Furman - Software designer, founder, and amateur astronaut',
+      'Daniel Furman - Not an AI',
   },
   description:
-    'I’m Daniel, a data scientist based in San Francisco. Among other things, I like interesting datasets and large neural networks.',
+    'Daniel Furman - Not an AI',
   alternates: {
     types: {
       'application/rss+xml': `${process.env.NEXT_PUBLIC_SITE_URL}/feed.xml`,
