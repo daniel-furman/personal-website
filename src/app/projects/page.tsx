@@ -67,7 +67,7 @@ export default function Projects() {
   return (
     <SimpleLayout
       title="Things I’ve made in the open."
-      intro="My open-source projects and open-science research."
+      intro="My open-source/science projects and research."
     >
       <ul
         role="list"
