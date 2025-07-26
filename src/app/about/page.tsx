@@ -79,7 +79,7 @@ export default function About() {
             </p>
             <div className="md:border-l md:border-zinc-100 md:pl-6 md:dark:border-zinc-700/40">
               <p className="text-base text-zinc-600 dark:text-zinc-400">
-                <em>"All models are wrong, but some are useful"</em>.
+                <em>&quot;All models are wrong, but some are useful&quot;</em>.
               </p>
             </div>
           </div>
