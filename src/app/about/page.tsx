@@ -72,7 +72,7 @@ export default function About() {
           </h1>
           <div className="mt-6 space-y-7 text-base text-zinc-600 dark:text-zinc-400">
             <p>
-             My name is Daniel Furman. I&apos;m a data scientist focused on building GenAI products that customers value. These days, I get excited about contributing to the AI revolution from its epicenter, the San Francisco Bay Area. 
+             Data scientist focused on building GenAI products that customers value. These days, I get excited about contributing to the AI revolution from its epicenter, the San Francisco Bay Area. 
             </p>
             <p className="text-base text-zinc-600 dark:text-zinc-400">
               One of my favorite quotes, from statistician George Box: 
