@@ -4,17 +4,17 @@ import Image from 'next/image'
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.svg'
+import logoCosmos from '@/images/logos/cosmos.jpg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
 
 const projects = [
   {
-    name: 'CalmeRys 78B',
+    name: 'CalmeRys-78B',
     description:
       'Cream of the crop of my LLM finetunes.',
-    link: { href: 'https://huggingface.co/dfurman/CalmeRys-78B-Orpo-v0.1', label: 'calmerys.tech' },
+    link: { href: 'https://huggingface.co/dfurman/CalmeRys-78B-Orpo-v0.1', label: 'calmerys-78b.tech' },
     logo: logoCosmos,
   },  
   {
