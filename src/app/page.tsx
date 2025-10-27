@@ -265,11 +265,11 @@ function Resume() {
 
 function Photos() {
   // Arrays that automatically scale - just add new items to extend
-  const images = [image10, image11, image3, image1, image2,image4, image5, image6, image7, image8, image9]
-  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
+  const images = [image11, image10, image3, image1, image2,image4, image5, image6, image7, image8, image9]
+  const rotations = ['rotate-2', 'rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
   const captions = [
+    'Marin Headlands (Oct 2025)',  
     'Palace of Fine Arts (Oct 2025)',
-    'Marin Headlands (Oct 2025)',   
     'Golden Gate (Jan 2025)',
     'Chestnut Street (Feb 2025)',
     'Marin Headlands (Jul 2025)', 
