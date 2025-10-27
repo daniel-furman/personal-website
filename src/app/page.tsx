@@ -265,20 +265,20 @@ function Resume() {
 
 function Photos() {
   // Arrays that automatically scale - just add new items to extend
-  const images = [image10, image11, image1, image2, image3, image4, image5, image6, image7, image8, image9]
+  const images = [image10, image11, image3, image1, image2,image4, image5, image6, image7, image8, image9]
   const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
   const captions = [
     'Palace of Fine Arts (Oct 2025)',
     'Marin Headlands (Oct 2025)',   
-    'Twilight on Chestnut Street (Feb 2025)',
-    'Ride with Friends (Jul 2025)',
-    'Golden Gate Views (Jan 2025)', 
-    'Ocean Beach Surf (Feb 2022)',
+    'Golden Gate (Jan 2025)',
+    'Chestnut Street (Feb 2025)',
+    'Marin Headlands (Jul 2025)', 
+    'Ocean Beach (Feb 2022)',
     'Tank Hill (Jun 2020)',
     'Big Sur (Dec 2016)',
-    'Ride Near Seattle (Mar 2025)',
-    'Marina Golden Hour (May 2025)',
-    'Mallorca Views (Jul 2025)'
+    'Outskirts of Seattle (Mar 2025)',
+    'Marina District (May 2025)',
+    'Mallorca Cap de Formentor (Jul 2025)'
   ]
 
   return <InfinitePhotos images={images} rotations={rotations} captions={captions} />
