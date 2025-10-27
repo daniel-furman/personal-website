@@ -26,6 +26,8 @@ import image6 from '@/images/photos/image-6.jpg'
 import image7 from '@/images/photos/image-7.jpg'
 import image8 from '@/images/photos/image-8.jpg'
 import image9 from '@/images/photos/image-9.jpg'
+import image10 from '@/images/photos/image-10.jpg'
+import image11 from '@/images/photos/image-11.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -263,18 +265,20 @@ function Resume() {
 
 function Photos() {
   // Arrays that automatically scale - just add new items to extend
-  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9]
-  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
+  const images = [image1, image2, image3, image4, image5, image6, image7, image8, image9, image10, image11]
+  const rotations = ['rotate-2', '-rotate-2', 'rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
   const captions = [
-    'Chestnut street at twilight - Feb 2025',
-    'Ride in the headlands - Jul 2025',
-    'Golden gate views - Jan 2025', 
-    'Ocean beach surf - Feb 2022',
-    'Tank hill - Jun 2020',
-    'Big Sur - Dec 2016',
-    'Ride near Seattle - Mar 2025',
-    'Marina golden hour - May 2025',
-    'Mallorca views - Jul 2025'
+    'Twilight on Chestnut street (Feb 2025)',
+    'Ride in the headlands (Jul 2025)',
+    'Golden gate views (Jan 2025)', 
+    'Ocean beach surf (Feb 2022)',
+    'Tank hill (Jun 2020)',
+    'Big Sur (Dec 2016)',
+    'Ride near Seattle (Mar 2025)',
+    'Marina golden hour (May 2025)',
+    'Mallorca views (Jul 2025)',
+    'Night at the Palace of Fine Arts (Oct 2025)',
+    'Backside of Hawk Hill (Oct 2025)',
   ]
 
   return <InfinitePhotos images={images} rotations={rotations} captions={captions} />
