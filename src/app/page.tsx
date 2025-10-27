@@ -28,6 +28,7 @@ import image8 from '@/images/photos/image-8.jpg'
 import image9 from '@/images/photos/image-9.jpg'
 import image10 from '@/images/photos/image-10.jpg'
 import image11 from '@/images/photos/image-11.jpg'
+import image12 from '@/images/photos/image-12.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -265,8 +266,8 @@ function Resume() {
 
 function Photos() {
   // Arrays that automatically scale - just add new items to extend
-  const images = [image11, image10, image3, image4, image1, image2, image5, image6, image7, image8, image9]
-  const rotations = ['-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
+  const images = [image11, image10, image3, image4, image1, image2, image5, image6, image7, image8, image9, image12]
+  const rotations = ['-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2']
   const captions = [
     'Marin Headlands (Oct 2025)',  
     'Palace of Fine Arts (Oct 2025)',
@@ -278,7 +279,8 @@ function Photos() {
     'Big Sur (Dec 2016)',
     'Outskirts of Seattle (Mar 2025)',
     'Marina District (May 2025)',
-    'Mallorca Cap de Formentor (Jul 2025)'
+    'Mallorca Cap de Formentor (Jul 2025)',
+    'Mendocino (Apr 2025)'
   ]
 
   return <InfinitePhotos images={images} rotations={rotations} captions={captions} />
