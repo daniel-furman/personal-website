@@ -43,13 +43,13 @@ export default function Tech() {
   return (
     <SimpleLayout
       title="Tools and gadgets in use."
-      intro="Here’s a big list of all of the things I build with."
+      intro="Here&apos;s a big list of all of the things I use to build."
     >
       <div className="space-y-20">
         <ToolsSection title="Workstation">
           <Tool title="MacBook Pro, Apple Silicon">
-            I was using an Intel-based MacBook Pro prior to this and the
-            difference is night and day.
+            I was using an Intel MacBook Pro prior to this. The
+            difference is night and day!
           </Tool>
           <Tool title="Apple Studio Display">
             I&apos;m a sucker for a good display, and this
@@ -59,10 +59,10 @@ export default function Tech() {
             Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH&apos;s blog post </a>.
           </Tool>
           <Tool title="Apple Magic Trackpad">
-            Becuase I can&apos;t use a mouse.
+            Because I can&apos;t use a mouse.
           </Tool>
           <Tool title="Herman Miller Sayl Chair">
-            It&apos;s real comfortable.
+            It&apos;s really comfortable.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
@@ -83,7 +83,7 @@ export default function Tech() {
         </ToolsSection>
         <ToolsSection title="Productivity">
           <Tool title="Notion">
-            Pretty decent docs platform, waiting to try one that is better.
+            Pretty decent docs platform. Waiting to try one that&apos;s better.
           </Tool>
           <Tool title="Jira">
             Because I have to.
