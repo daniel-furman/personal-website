@@ -47,25 +47,22 @@ export default function Tech() {
     >
       <div className="space-y-20">
         <ToolsSection title="Workstation">
-          <Tool title="14” MacBook Pro, M1 Pro, 16GB RAM (2021)">
-            I was using an Intel-based 16” MacBook Pro prior to this and the
-            difference is night and day. Apple kinda cooked here, not gonna lie.
+          <Tool title="MacBook Pro, Apple Silicon">
+            I was using an Intel-based MacBook Pro prior to this and the
+            difference is night and day.
           </Tool>
           <Tool title="Apple Studio Display">
-            Totally splurged on this one. I’m a sucker for a good display, and this 
+            I’m a sucker for a good display, and this 
             one does not disappoint.
           </Tool>
           <Tool title="Varmilo Minilo 75% with Kailh Presitge Silent Switches">
-            Best keyboard I’ve ever used. Makes typing a delight. Purchase inspired 
-            by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH’s blog post </a> 
-            on mechanical keyboards.
+            Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH’s blog post </a>.
           </Tool>
           <Tool title="Apple Magic Trackpad">
-            Something about all the gestures makes me feel like a wizard with
-            special powers. I really like that feeling.
+            Becuase I can't use a mouse.
           </Tool>
           <Tool title="Herman Miller Sayl Chair">
-            Might as well sit in a chair that’s designed to be comfortable.
+            It's real comfortable.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
@@ -73,10 +70,10 @@ export default function Tech() {
             Obviously.
           </Tool>
           <Tool title="Claude Code">
-            Best agentic AI coding tool I’ve used.
+            Best command line coding agent, by far.
           </Tool>
           <Tool title="Promptfoo">
-            Best package for evals out there.
+            Best package for evals (and free!!).
           </Tool>
         </ToolsSection>
         <ToolsSection title="Design">
