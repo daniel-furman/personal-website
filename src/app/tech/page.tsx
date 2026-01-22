@@ -52,17 +52,17 @@ export default function Tech() {
             difference is night and day.
           </Tool>
           <Tool title="Apple Studio Display">
-            I’m a sucker for a good display, and this 
+            I&apos;m a sucker for a good display, and this
             one does not disappoint.
           </Tool>
           <Tool title="Varmilo Minilo 75% with Kailh Presitge Silent Switches">
-            Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH’s blog post </a>.
+            Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH&apos;s blog post </a>.
           </Tool>
           <Tool title="Apple Magic Trackpad">
-            Becuase I can't use a mouse.
+            Becuase I can&apos;t use a mouse.
           </Tool>
           <Tool title="Herman Miller Sayl Chair">
-            It's real comfortable.
+            It&apos;s real comfortable.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
