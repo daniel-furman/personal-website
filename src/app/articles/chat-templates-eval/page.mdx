@@ -26,7 +26,7 @@ However, do we in fact see these degradations on evaluation benchmarks?
 
 **NB**: This blog post is intended for readers with basic familiarity with Python programming and neural language modeling.
 
-# Introduction
+## Introduction
 
 If you’ve built on top of OpenAI’s chat API, the following code will be recognizable. Under the hood, this input is transformed into one tokenizable string via the ChatML format:
 
@@ -78,7 +78,7 @@ Why bother with chat templates? For one because it’s advised to match the expe
 
 But how do we know whether chat formatting is indeed improving our performance? Enter LM evals.
 
-# LM Evals
+## LM Evals
 
 Evaluations are used to measure an AI/ML model’s performance, and they can take many shapes and sizes. Evals include two core components: a dataset curated for a specific task and associated metric(s) measuring the modeling performance.
 
@@ -101,7 +101,7 @@ The average of these four metrics was computed here (Table 1), primarily to use 
 
 IFEval is an ideal test for exploring the impacts of chat templates, since the test is specifically designed to measure instruction-following capabilities on chat data. Another interesting line of questioning is whether chat templating positively impacts evals that aren’t as well suited for chat data — a topic left for future research.
 
-# Chat Templates for IFEval
+## Chat Templates for IFEval
 
 Eleuther.AI’s lm-eval is the de facto open-source package for LM evaluation. Since chat templating for more models is an oft-requested addition to the library, it was easy to sync up with other developers wanting to work on this feature. Development is underway at the add-chat-templating branch, spurred by issues #1098 and #1209. When using this branch, we can apply chat formats to an eval as follows:
 
@@ -156,7 +156,7 @@ Chat templates caused a significant uplift in IFEval scores across the board in 
 
 Zooming out to a thirty thousand foot level, it’s a great time to research LM evals — for one, because stronger LLMs require a new generation of tests to effectively evaluate them. Whether you create your own or build on top of existing ones, researching evals is an impactful way to contribute to the open science community.
 
-# Citations
+## Citations
 
 [1] Matthew Carrigan (2023), [Chat Templates: An End to the Silent Performance Killer](https://huggingface.co/blog/chat-templates), Hugging Face.
 
@@ -166,7 +166,7 @@ Dataset licensing: The IFEval dataset used herein is publicly available to all w
 
 [3] Models used here, from largest to smallest (all permissively licensed for research use): Llama-2-70b-chat (Meta), Mixtral-8x7B-Instruct-v0.1 (Mistral.AI), Nous-Hermes-2-Mixtral-8x7B-DPO (Nous-Research), Nous-Hermes-2-Yi-34B (Nous-Research), Starling-LM-7B-alpha (Berkeley NEST), Zephyr-7B-beta (Hugging Face), Mistral-7B-Instruct-v0.2 (Mistral.AI).
 
-# Additional Notes
+## Additional Notes
 
 See the notebooks [here](https://github.com/daniel-furman/evals-with-chat-formats) for the code used to run the experiments.
 
