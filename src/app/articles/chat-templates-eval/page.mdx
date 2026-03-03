@@ -16,9 +16,173 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-Chat models are typically fine-tuned on datasets formatted with a prompt template. 
-These chat templates are programmed recipes that convert a chat conversation into a single string. 
-At prediction time, it’s standard to match an LLM’s expected chat format – not doing so is oft-noted as causing performance degradations. 
+Chat models are typically fine-tuned on datasets formatted with a prompt template.
+These chat templates are programmed recipes that convert a chat conversation into a single string.
+At prediction time, it’s standard to match an LLM’s expected chat format — not doing so is oft-noted as causing performance degradations [1].
 However, do we in fact see these degradations on evaluation benchmarks?
 
-Read more at https://huggingface.co/blog/dfurman/evaluations-with-chat-formats
+> Building solid evals should be the starting point for any LLM-based system or product (as well as conventional machine learning systems) — [link](https://eugeneyan.com/writing/llm-patterns/#how-to-apply-evals)
+
+**NB**: This blog post is intended for readers with basic familiarity with Python programming and neural language modeling.
+
+## Introduction
+
+If you’ve built on top of OpenAI’s chat API, the following code will be recognizable. Under the hood, this input is transformed into one tokenizable string via the ChatML format:
+
+```python
+from openai import OpenAI
+client = OpenAI()
+
+response = client.chat.completions.create(
+  model="gpt-3.5-turbo",
+  messages=[
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Who won the world series in 2020?"},
+    {"role": "assistant", "content": "The Los Angeles Dodgers won the World Series in 2020."},
+    {"role": "user", "content": "Where was it played?"}
+  ]
+)
+```
+
+Result:
+
+```
+<|im_start|>system
+You are a helpful assistant.
+<|im_start|>user
+Who won the world series in 2020?<|im_end|>
+<|im_start|>assistant
+The Los Angeles Dodgers won the World Series in 2020.<|im_end|>
+<|im_start|>user
+Where was it played?<|im_end|>
+<|im_start|>assistant
+```
+
+It turns out there’s a wide variety of chat templates across the LLM research community. Take an open-source model like Mixtral-8x7B-Instruct-v0.1. Its format looks wildly different from gpt-3.5-turbo above:
+
+```python
+from transformers import AutoTokenizer
+tokenizer = AutoTokenizer.from_pretrained("mistralai/Mixtral-8x7B-Instruct-v0.1")
+chat = [
+  {"role": "user", "content": "Hello, how are you?"},
+  {"role": "assistant", "content": "I’m doing great. How can I help you today?"},
+  {"role": "user", "content": "Write me a haiku about coding."},
+]
+tokenizer.apply_chat_template(chat, tokenize=False)
+```
+
+Result:
+
+```
+<s>[INST] Hello, how are you? [/INST]I’m doing great. How can I help you today?</s> [INST] Write me a haiku about coding. [/INST]
+```
+
+Why bother with chat templates? Well, it’s strongly advised to match the expected chat template at prediction time (for instance, see the info on "Instruction format" at the [repo](https://huggingface.co/mistralai/Mixtral-8x7B-Instruct-v0.1) for Mixtral-8x7B-Instruct-v0.1). And, with proprietary chat models like gpt-3.5-turbo, chat templates are often applied behind the scenes of an endpoint whether you like it or not!
+
+But how do we know whether chat formatting is indeed improving our performance? Enter LM evals.
+
+## LM Evals
+
+Evaluations are used to measure an AI/ML model’s performance, and they can take many shapes and sizes. Evals include two core components: a dataset curated for a specific task and associated metric(s) measuring the modeling performance.
+
+Generative LM evals carry some additional nuances. For example, different frameworks measure text generation performance in different ways — even varying for the same eval ([reference](https://huggingface.co/blog/open-llm-leaderboard-mmlu)). When comparing scores across studies, it’s therefore very important to confirm that the results were computed with the same code and config to avoid any errant analysis.
+
+The superb Instruction-Following Evaluation ([IFEval](https://arxiv.org/abs/2311.07911)) [2] is used for our testing here. This eval includes 541 prompts that measure a language model’s ability to follow verifiable natural language instructions. Examples of these verifiable instructions include:
+
+- "Write 450 to 500 words"
+- "your entire output should be in JSON output"
+- "include a title, and put it into two square brackets such as [[ title ]]"
+
+For a given response and a verifiable instruction, we examine whether the instruction has been followed or not with the following four metrics:
+
+1. **Prompt-level strict-accuracy:** The percentage of prompts where all verifiable instructions are followed.
+2. **Inst-level strict-accuracy:** The percentage of verifiable instructions that are followed.
+3. **Prompt-level loose-accuracy:** Prompt-level accuracy computed with the loose criterion.
+4. **Inst-level loose-accuracy:** Instruction-level accuracy computed with a loose criterion.
+
+The average of these four metrics was computed here (Table 1), primarily to use a single metric that captures the most diverse signal available.
+
+IFEval is an ideal test for exploring the impacts of chat templates, since the test is specifically designed to measure instruction-following capabilities on chat data. Another interesting line of questioning is whether chat templating positively impacts evals that aren’t as well suited for chat data — a topic left for future research.
+
+## Chat Templates for IFEval
+
+Eleuther.AI’s lm-eval is the de facto open-source package for LM evaluation. Since chat templating for more models is an oft-requested addition to the library, it was easy to sync up with other developers wanting to work on this feature. Development is underway at the add-chat-templating branch, spurred by issues #1098 and #1209. When using this branch, we can apply chat formats to an eval as follows:
+
+```bash
+lm_eval --model hf \
+    --model_args=pretrained=meta-llama/Llama-2-70b-chat-hf,dtype="bfloat16",parallelize=True,device_map="auto",use_chat_template=True,system_prompt="You are a helpful assistant." \
+    --tasks ifeval \
+    --batch_size 16 \
+    --output_path output/Llama-2-70b-chat-hf \
+    --log_samples \
+    --num_fewshot 0
+```
+
+The newly introduced triggers `use_chat_template` and `system_prompt` control how the chat template is applied. In the branch’s current experimental form, the code prints the first prompt before and after applying the chat template. Here’s what that looks like for the above code block:
+
+**First element before prompt formatting:**
+
+```
+(‘Write a 300+ word summary of the wikipedia page "https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*.’, {‘until’: [], ‘do_sample’: False, ‘temperature’: 0.0, ‘max_gen_toks’: 1280})
+```
+
+**First element after prompt formatting:**
+
+```
+(‘<s>[INST] <<SYS>>\nYou are a helpful assistant.\n<</SYS>>\n\nWrite a 300+ word summary of the wikipedia page "https://en.wikipedia.org/wiki/Raymond_III,_Count_of_Tripoli". Do not use any commas and highlight at least 3 sections that has titles in markdown format, for example *highlighted section part 1*, *highlighted section part 2*, *highlighted section part 3*. [/INST]’, {‘until’: [], ‘do_sample’: False, ‘temperature’: 0.0, ‘max_gen_toks’: 1280})
+```
+
+The output has taken on the desired chat template!
+
+We are now ready to A/B test the influence of chat templates on IFEval. A handful of popular LLMs were selected for our experiment — each with its own unique chat template. On the larger end we have the 70B parameter Llama-2-70b-chat, two variants of the same 47B parameter model (Mixtral-8x7B-Instruct-v0.1 and Nous-Hermes-2-Mixtral-8x7B-DPO), as well as the 34B parameter Nous-Hermes-2-Yi-34B. On the smaller end we have three 7B parameter models: Mistral-Instruct-7B-v0.2, Zephyr-7b-beta, and Starling-LM-7B-alpha. As for the system prompt, a simple "You are a helpful assistant." was used for compatible models.
+
+### Results
+
+| Model | Without Chat Template | With Chat Template | Difference |
+|---|---|---|---|
+| Llama-2-70b-chat-hf | ~54% | ~56% | +2% |
+| Mixtral-8x7B-Instruct-v0.1 | ~59% | ~60% | +1% |
+| Nous-Hermes-2-Mixtral-8x7B-DPO | ~63% | ~63% | +0% |
+| Nous-Hermes-2-Yi-34B | ~48% | ~51% | +3% |
+| Starling-LM-7B-alpha | ~50% | ~52% | +2% |
+| Zephyr-7b-beta | ~24% | ~63% | +39% |
+| Mistral-7B-Instruct-v0.2 | ~45% | ~49% | +4% |
+
+*Table 1: Results from the A/B test on IFEval, sorted by model size descending. Experiments were executed with models in half precision bfloat16 on a workstation with 2x H100 80 GB SXM5 chips.*
+
+Chat templates caused serious shakeup to IFEval scoring! Nous-Hermes-2-Mixtral-8x7B-DPO clocked in as the most performant model tested here, with an average score of ~63%. In contrast, Zephyr-7b-beta was the worst performing model yet had the largest boost from chat templating — a whopping +39%! As a reference, the IFEval paper reported gpt-4 (Nov 2023) at an average score of ~81% and PaLM 2S (Aug 2023) at ~51% [2].
+
+In sum, these results point to a couple of key insights:
+
+1. **Chat templating has a positive impact on instruction-following for open-source LLMs**, the extent of which varies by model.
+2. **Open-source LLMs are less equipped at following natural language instructions than state-of-the-art proprietary models like gpt-4.**
+
+## Conclusion
+
+Chat templates caused a significant uplift in IFEval scores across the board in our experiment, as proven over a variety of formats and models. However, I don’t necessarily expect these effects to generalize to all LM evals. To further explore the impacts of chat templating on benchmarks, next steps include experimentation with:
+
+- More instruction-following evals similar to IFEval
+- General-purpose evals such as those in the Open LLM Leaderboard
+- In-context retrieval evals like "Needle in a Haystack"
+
+Zooming out to a thirty thousand foot level, it’s a great time to research LM evals — for one, because stronger LLMs require a new generation of tests to effectively evaluate them. Whether you create your own or build on top of existing ones, researching evals is an impactful way to contribute to the open science community.
+
+## Citations
+
+[1] Matthew Carrigan (2023), [Chat Templates: An End to the Silent Performance Killer](https://huggingface.co/blog/chat-templates), Hugging Face.
+
+[2] Zhou et al. (2023), [Instruction-Following Evaluation for Large Language Models](https://arxiv.org/pdf/2311.07911), arXiv.
+
+Dataset licensing: The IFEval dataset used herein is publicly available to all without restriction (Apache-2.0 license).
+
+[3] Models used here, from largest to smallest (all permissively licensed for research use): Llama-2-70b-chat (Meta), Mixtral-8x7B-Instruct-v0.1 (Mistral.AI), Nous-Hermes-2-Mixtral-8x7B-DPO (Nous-Research), Nous-Hermes-2-Yi-34B (Nous-Research), Starling-LM-7B-alpha (Berkeley NEST), Zephyr-7B-beta (Hugging Face), Mistral-7B-Instruct-v0.2 (Mistral.AI).
+
+## Additional Notes
+
+See the notebooks [here](https://github.com/daniel-furman/evals-with-chat-formats) for the code used to run the experiments.
+
+To audit the results, see outputs for each run [here](https://github.com/daniel-furman/evals-with-chat-formats/tree/main/assets/IFEval_results).
+
+For compute, RunPod was used for access to workstations with Nvidia GPU chips — in particular, a cluster with 2x H100 80 GB SXM5 chips. In total, the experiment included 14 runs of IFEval, accumulating ~6 hours of cluster uptime.
+
+Confidence intervals were taken to estimate statistical uncertainty in our results (bootstrap resampling method). These 95% confidence intervals ranged from roughly ±2.75% to ±4.25% — small relative to the measured effects of chat templating.
