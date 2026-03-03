@@ -1,5 +1,6 @@
 import { ArticleLayout } from '@/components/ArticleLayout'
-import designSystem from './planetaria-design-system.png'
+import Image from 'next/image'
+import ifevalResults from './ifeval_chat_template_results.png'
 
 export const article = {
   author: 'Daniel Furman',
@@ -138,15 +139,7 @@ We are now ready to A/B test the influence of chat templates on IFEval. A handfu
 
 ### Results
 
-| Model | Without Chat Template | With Chat Template | Difference |
-|---|---|---|---|
-| Llama-2-70b-chat-hf | ~54% | ~56% | +2% |
-| Mixtral-8x7B-Instruct-v0.1 | ~59% | ~60% | +1% |
-| Nous-Hermes-2-Mixtral-8x7B-DPO | ~63% | ~63% | +0% |
-| Nous-Hermes-2-Yi-34B | ~48% | ~51% | +3% |
-| Starling-LM-7B-alpha | ~50% | ~52% | +2% |
-| Zephyr-7b-beta | ~24% | ~63% | +39% |
-| Mistral-7B-Instruct-v0.2 | ~45% | ~49% | +4% |
+<Image src={ifevalResults} alt="IFEval results comparing performance with and without chat templates across seven open-source LLMs" />
 
 *Table 1: Results from the A/B test on IFEval, sorted by model size descending. Experiments were executed with models in half precision bfloat16 on a workstation with 2x H100 80 GB SXM5 chips.*
 
