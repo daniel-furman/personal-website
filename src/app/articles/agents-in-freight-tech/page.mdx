@@ -33,7 +33,7 @@ Run a frontier LLM on millions of inputs for the same task. You'll see strange t
 
 For our email and voice agents, **regression evals were the moat**. Every weird failure got pinned and bolted onto our test suite. Over months, that built into a safety net we couldn't live without.
 
-The compounding was satisfying. When a new failure hit (reported by a customer, caught in human-led data review), we'd run the regression suite at `repeat=10` and demand pass^10 accuracy before shipping. That flywheel is what I point to when people ask how we built reliable prompts.
+The compounding was satisfying. When a new failure hit (reported by a customer, caught in human-led data review), we'd add it to and then run the regression suite at `repeat=10` and demand near pass^10 accuracy before shipping. That flywheel is what I point to when people ask how we built reliable prompts.
 
 And the curated eval data gave us other superpowers: finetuning when warranted, onboarding new team members faster, aligning ground truth across the team.
 
