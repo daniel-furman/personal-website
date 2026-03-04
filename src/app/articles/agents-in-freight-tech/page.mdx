@@ -15,38 +15,40 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-I spent the last 2 years building AI agents at a freight tech startup. Production agents, real workflows, at scale. Here are some takeaways.
+I spent 2 years building AI agents at a freight tech startup. Production agents, real workflows, millions of inputs. Here's what stuck.
 
-## See like an agent.
+## See like an LLM.
 
-Understanding first principles is important. You just need to know what principles you actually need to understand. Do I, an agent builder, need to know all the mechanics of LLM pre-training and RL post-training? Not really. Does it help to understand how tokens are passed through at inference time? How text generation works? Ya, it really does.
+You don't need to know every detail of pre-training and RLHF. But understanding how tokens flow through at inference time, how text generation actually works? That changes how you build.
 
-I think "seeing like an LLM" is the best way to phrase it.
+Once you internalize the model's perspective, context engineering clicks. How else would you expect the model to understand what you want? We sanded down our prompts through conversation compaction and instruction optimization, all pointed at one thing: more accurate generalization.
 
-Once you see like an LLM, context engineering becomes obviously fruitful. How else would you expect the model to understand what you want it to do? This led us to things like conversation compaction and instruction optimization, all in service of more accurate generalization.
+Same intuition applies to task design. If you want a probabilistic model to do something on behalf of users at 95%+ accuracy, you don't hand it a complicated question. You strip it back to the simplest possible ask.
 
-The same intuition applies to task design. If you want a probabilistic model to do something on behalf of users at a high accuracy clip, would you ask a complicated question? Or would you simplify as much as possible?
+Andrej Karpathy nailed this with his task contractor analogy. Would you give a human contractor clear instructions that cover all your asks? Or convoluted ones that skip key details? Agents are no different.
 
-Andrej Karpathy was the first to turn me onto the task contractor analogy. Would you give a (human) task contractor clear and simple instructions that covered all your asks? Or complex, convoluted ones that skip key details? Same holds true for AI agents.
+## Great models still make weird mistakes at scale.
 
-## Even great models make weird mistakes at scale.
+Run a frontier LLM on millions of inputs for the same task. You'll see strange things at the edges.
 
-Run a frontier LLM on millions of inputs for the same task, and you'll start to observe weird things at the edges.
+For our email and voice agents, **regression evals were the moat**. Every weird failure got pinned and bolted onto our test suite. Over months, that built into a safety net we couldn't live without.
 
-In building these email and voice agents, regression evals were our moat. Every weird failure got pinned and added to our regression tests. Over months, that built into a safety net that was critical to prompt optimization and accuracy maintenance. This compounded in a really satisfying way. When a new failure hit, perhaps reported by a customer or caught in human-led data review, running these regression evals in repeat=10 and demanding pass^10 level accuracy was quite critical. This flywheel is what I point to when asked how we built reliable prompts. And, data curation of this style also happens to give you other superpowers (finetuning models when warranted, onboarding new team members, aligning ground truth outcomes across the team, etc.).
+The compounding was satisfying. When a new failure hit (reported by a customer, caught in human-led data review), we'd run the regression suite at `repeat=10` and demand pass^10 accuracy before shipping. That flywheel is what I point to when people ask how we built reliable prompts.
 
-Capability evals (crafting difficult test sets) weren't as helpful for our tasks because our agents had one objective - facilitate the freight transaction. Since gpt-4o, LLMs have been able to get the job done that we were asking these agents to do. It wasn't really worth fixating on inputs that were too difficult (clearly misrepresented inbound emails, voice calls with huge transcription mistakes) because these errors are acceptable. Better to focus on input data that is valid and build evals around these.
+And the curated eval data gave us other superpowers: finetuning when warranted, onboarding new team members faster, aligning ground truth across the team.
 
-Oh, and one more thing here: we were observability maximalists. Log everything. You can't fix what you can't see, and when something breaks at 2am, you want to know exactly which step went sideways and why.
+Capability evals (crafting hard test sets) were less useful for us. Our agents had one job: facilitate the freight transaction. Since gpt-4o, LLMs have been able to handle what we were asking. Fixating on impossible inputs (garbled inbound emails, voice calls with huge transcription errors) wasn't worth it. Those failures are acceptable. Better to build evals around valid input data.
+
+One more thing here: we were observability maximalists. Log everything. You can't fix what you can't see. When something breaks at 2am, you want to know exactly which step went sideways.
 
 ## I'm bullish on UIs that aren't chat.
 
-We deployed our agents through email and voice channels. Not chat.
+We deployed our agents through email and voice. Not chat.
 
-Chat is a trap for many agent products. There's a reason Claude Code is still a CLI.
+Chat is a trap for many agent products. (There's a reason Claude Code is still a CLI.)
 
-If you do build a chat interface, which is sometimes the right call, know that you're putting yourself directly next to ChatGPT and Claude. Users have those benchmarks seared into their brains. Anything that feels even slightly worse is instantly obvious, and painful. You don't want that fight.
+If you do build a chat interface, which is sometimes the right call, know that you're parking yourself next to ChatGPT and Claude. Users have those benchmarks burned into their brains. Anything that feels even slightly worse is instantly obvious, and painful. You probably don't want that fight.
 
 ## One more thing.
 
-Basically everything I put into practice traces back to some great blogs that I read ([Hamel Husain](https://hamel.dev), [Eugene Yan](https://eugeneyan.com)), the aforementioned Andrej Karpathy (the goat 🐐), and tech Twitter more generally (I refuse to call it X). If you're building agents, the knowledge is out there. The community is absurdly generous with what they share.
+Most of what I put into practice traces back to a few great blogs ([Hamel Husain](https://hamel.dev), [Eugene Yan](https://eugeneyan.com)), Karpathy (the goat 🐐), and tech Twitter (I refuse to call it X). If you're building agents, the knowledge is out there. The community is absurdly generous with what they share.

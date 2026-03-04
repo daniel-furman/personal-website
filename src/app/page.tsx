@@ -358,8 +358,8 @@ function Education() {
     {
       institution: 'University of California, Berkeley',
       degree: 'Master of Science',
-      field: 'Machine Learning',
-      url: 'https://www.berkeley.edu',
+      field: 'Applied Data Science',
+      url: 'https://www.ischool.berkeley.edu/',
       logo: logoBerkeley,
     },
     {
