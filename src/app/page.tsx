@@ -12,6 +12,7 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
+import logoReplit from '@/images/logos/replit_logo.svg'
 import logoParade from '@/images/logos/paradeai_logo.jpg'
 import logoWestMonroe from '@/images/logos/westmonroepartners_logo.jpg'
 import logoUnderstory from '@/images/logos/understoryai_logo.jpg'
@@ -217,14 +218,22 @@ function Role({ role }: { role: Role }) {
 function Resume() {
   let resume: Array<Role> = [
     {
-      company: 'Parade.ai',
-      title: 'Data Science Lead',
-      logo: logoParade,
-      start: '2024',
+      company: 'Replit',
+      title: 'Senior Data Scientist, AI Agent',
+      logo: logoReplit,
+      start: '2026',
       end: {
         label: 'Present',
         dateTime: new Date().getFullYear().toString(),
       },
+      url: 'https://replit.com',
+    },
+    {
+      company: 'Parade.ai',
+      title: 'Lead AI Product Engineer',
+      logo: logoParade,
+      start: '2024',
+      end: '2026',
       url: 'https://parade.ai',
     },
     {
