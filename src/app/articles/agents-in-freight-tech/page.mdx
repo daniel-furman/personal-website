@@ -25,9 +25,9 @@ Once you internalize the model's perspective, context engineering clicks. This f
 
 Same intuition applies to task design. If a probabilistic model needs to do something on behalf of users at 98%+ accuracy, you really don't want to hand it a complicated question. Strip the task back to the simplest possible ask.
 
-Andrej Karpathy nailed this with a "task contractor" analogy in his 2023 <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A" target="_blank" rel="noopener noreferrer">talk</a> at Microsoft Build.
+Andrej Karpathy nailed this with a "task contractor" analogy in his 2023 <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A" target="_blank" rel="noopener noreferrer">talk</a> at Microsoft Build. Paraphrasing:
 
-> (paraphrasing) Would you give a human contractor clear instructions that cover all your asks? Or convoluted ones that skip key details? Given a complicated task, might success rates be worse?
+> "Would you hand a contractor clear, complete instructions? Or vague ones that skip key details? The quality of your instructions shapes the quality of the outcome." — Andrej Karpathy
 
 Agents are no different.
 
@@ -49,9 +49,7 @@ One more thing here: we were observability maximalists. Log everything. You can'
 
 ## I'm bullish on UIs that aren't chat.
 
-We deployed our agents through email and voice. Not chat.
-
-Chat is a trap for task/automation agents.
+Chat is a trap for task agents powering business automations. We deployed our agents through email and phone channels instead.
 
 If you do build a chat interface, which is sometimes the right call, know that you're parking yourself next to ChatGPT and Claude. Users have those benchmarks burned into their brains. Anything that feels even slightly worse is instantly obvious, and painful.
 
