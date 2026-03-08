@@ -5,7 +5,7 @@ export const article = {
   date: '2026-03-03',
   title: '3 Takeaways From Building AI Agents in Freight Tech',
   description:
-    "I spent 2 years building AI agents at a freight tech startup. Production agents, real workflows, millions of conversations. Here's what stuck.",
+    "I spent 2 years building AI agents at a freight tech startup. Production agents, messy business process, millions of conversations. Here's what stuck.",
 }
 
 export const metadata = {
@@ -15,29 +15,35 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-I spent 2 years building AI agents at a freight tech startup. Production agents, real workflows, millions of conversations. Here's what stuck.
+I spent 2 years building AI agents at a freight tech startup. Production agents, messy business process, millions of conversations. Here's what stuck.
 
 ## See like an LLM.
 
-As an agent builder, you don't need to know every detail of RL post-training. But understanding how tokens flow through at inference time, how text generation actually works? That changes how you build.
+Understanding how tokens flow through an LLM at inference time changes how you build.
 
-Once you internalize the model's perspective, context engineering clicks. How else would you expect the model to understand what you want? This framing led us to foundational techniques like email thread compaction and dynamic metadata packing, all pointed at more accurate generalization and superior outcomes.
+Once you internalize the model's perspective, context engineering clicks. This framing led us to foundational techniques like email thread compaction and "smart" dynamic metadata packing, while retaining nice things like prompt caching. All efforts pointed at more accurate generalization and superior outcomes.
 
-Same intuition applies to task design. If you want a probabilistic model to do something on behalf of users at 95%+ accuracy, you don't hand it a complicated question. You strip it back to the simplest possible ask.
+Same intuition applies to task design. If a probabilistic model needs to do something on behalf of users at 98%+ accuracy, you really don't want to hand it a complicated question. Strip the task back to the simplest possible ask.
 
-Andrej Karpathy nailed this with his task contractor analogy. Would you give a human contractor clear instructions that cover all your asks? Or convoluted ones that skip key details? Agents are no different.
+Andrej Karpathy nailed this with a "task contractor" analogy in his 2023 <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A" target="_blank" rel="noopener noreferrer">talk</a> at Microsoft Build.
+
+> (paraphrasing) Would you give a human contractor clear instructions that cover all your asks? Or convoluted ones that skip key details? Given a complicated task, might success rates be worse?
+
+Agents are no different.
 
 ## Great models still make weird mistakes at scale.
 
-Run a frontier LLM on millions of inputs for the same task. You'll see strange things at the edges.
+Run a frontier LLM on millions of inputs for the same task, and you'll see strange things at the edges.
 
-For our email and voice agents, **regression evals were the moat**. Every weird failure got pinned and bolted onto our test suite. Over months, that built into a safety net we couldn't live without.
+For our email and voice agents, **regression evals were the key** to remedying this problem. 
 
-The compounding was satisfying. When a new failure hit (reported by a customer, caught in human-led data review), we'd add it to and then run the regression suite at `repeat=10` and demand near pass^10 accuracy before shipping. That flywheel is what I point to when people ask how we built reliable prompts.
+Every weird failure we observed in internal review or from customer feedback got pinned and bolted onto our test suite. Over months, that built into a safety net we couldn't live without.
+
+The compounding was satisfying. 
 
 And the curated eval data gave us other superpowers: finetuning when warranted, onboarding new team members faster, aligning ground truth across the team.
 
-Capability evals (crafting hard test sets) were less useful for us. Our agents had one job: facilitate the freight transaction. Since gpt-4o, LLMs have been able to handle what we were asking. Fixating on impossible inputs (garbled inbound emails, voice calls with huge transcription errors) wasn't worth it. Those failures are acceptable. Better to build evals around valid input data.
+Crafting hard test sets (capability evals) were less useful for us. Our agents had one job: facilitate the freight transaction. Since gpt-4o, LLMs have been able to handle what we were asking. Fixating on impossible inputs (garbled inbound emails, voice calls with huge transcription errors) wasn't worth it. Those failures are acceptable. Better to build evals around valid input data.
 
 One more thing here: we were observability maximalists. Log everything. You can't fix what you can't see. When something breaks at 2am, you want to know exactly which step went sideways.
 
@@ -45,10 +51,10 @@ One more thing here: we were observability maximalists. Log everything. You can'
 
 We deployed our agents through email and voice. Not chat.
 
-Chat is a trap for many agent products. (There's a reason Claude Code is still a CLI.)
+Chat is a trap for task/automation agents.
 
-If you do build a chat interface, which is sometimes the right call, know that you're parking yourself next to ChatGPT and Claude. Users have those benchmarks burned into their brains. Anything that feels even slightly worse is instantly obvious, and painful. You probably don't want that fight.
+If you do build a chat interface, which is sometimes the right call, know that you're parking yourself next to ChatGPT and Claude. Users have those benchmarks burned into their brains. Anything that feels even slightly worse is instantly obvious, and painful.
 
 ## One more thing.
 
-Most of what I put into practice traces back to a few great blogs ([Hamel Husain](https://hamel.dev), [Eugene Yan](https://eugeneyan.com)), Karpathy (the goat 🐐), and tech Twitter (I refuse to call it X). If you're building agents, the knowledge is out there. The community is absurdly generous with what they share.
+A lot of what I put into practice traces back to a few great blogs (<a href="https://hamel.dev" target="_blank" rel="noopener noreferrer">Hamel Husain</a>, <a href="https://eugeneyan.com" target="_blank" rel="noopener noreferrer">Eugene Yan</a>), <a href="https://x.com/karpathy" target="_blank" rel="noopener noreferrer">Andrej Karpathy</a> (the goat 🐐). If you're building agents, the knowledge is out there. Much of the LLM community is quite generous with what they share in the open -- on most topics XD
