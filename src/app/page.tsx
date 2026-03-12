@@ -223,7 +223,7 @@ function Resume() {
       logo: logoReplit,
       start: '2026',
       end: {
-        label: 'Present',
+        label: '',
         dateTime: new Date().getFullYear().toString(),
       },
       url: 'https://replit.com',
