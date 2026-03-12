@@ -12,7 +12,7 @@ import {
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
-import logoReplit from '@/images/logos/replit_logo.svg'
+import logoReplit from '@/images/logos/Replit_Logo.png'
 import logoParade from '@/images/logos/paradeai_logo.jpg'
 import logoWestMonroe from '@/images/logos/westmonroepartners_logo.jpg'
 import logoUnderstory from '@/images/logos/understoryai_logo.jpg'
