@@ -357,15 +357,15 @@ function Education() {
   let education: Array<Education> = [
     {
       institution: 'University of California, Berkeley',
-      degree: 'Master of Science',
+      degree: 'MS',
       field: 'Applied Data Science',
       url: 'https://www.ischool.berkeley.edu/',
       logo: logoBerkeley,
     },
     {
       institution: 'University of Pennsylvania',
-      degree: 'Bachelor of Arts',
-      field: 'Earth Science',
+      degree: 'BA',
+      field: 'Earth Science & Math',
       url: 'https://www.upenn.edu',
       logo: logoPenn,
     }
