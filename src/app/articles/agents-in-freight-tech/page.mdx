@@ -21,7 +21,9 @@ I spent two years building AI agents at a freight tech startup. Production agent
 
 Understanding how tokens flow through an LLM at inference time changes how you build.
 
-Once you internalize the model's perspective, context engineering clicks. This framing led us to foundational techniques like email thread compaction and "smart" dynamic metadata packing, while retaining nice things like prompt caching. All efforts pointed at more accurate generalization and superior outcomes.
+You internalize the model's perspective, and context engineering clicks. This framing led us to focusing on foundational techniques like email thread compaction and dynamic metadata packing, while retaining need-to-haves like system prompt caching. 
+
+These efforts resulted in more accurate generalization and superior outcomes.
 
 Same intuition applies to task design. If a probabilistic model needs to do something on behalf of users at 98%+ accuracy, you really don't want to hand it a complicated question. Strip the task back to the simplest possible ask.
 
@@ -29,11 +31,11 @@ Andrej Karpathy nailed this with a "task contractor" analogy in his 2023 <a href
 
 > "Would you hand a contractor clear, complete instructions? Or vague ones that skip key details? The quality of your instructions shapes the quality of the outcome." — Andrej Karpathy
 
-Agents are no different.
+Agents are no different. Even if the use case is complex/open-ended, strive to make your prompting simplified and aimed at generalization.
 
 ## Great models still make weird mistakes at scale.
 
-Run a frontier LLM on millions of inputs for the same task, and you'll see strange things at the edges.
+Run an LLM on millions of inputs for the same task, and you'll see strange things at the edges.
 
 For our email and voice agents, **regression evals were the key** to remedying this problem. 
 
@@ -41,7 +43,7 @@ Every weird failure we observed in internal review or from customer feedback got
 
 The compounding was satisfying. 
 
-And the curated eval data gave us other superpowers: finetuning when warranted, onboarding new team members faster, aligning ground truth across the team.
+And the curated eval data gave us other superpowers: finetuning when warranted, onboarding new team members faster, aligning ground truth across the team, the list goes on.
 
 Crafting hard test sets (capability evals) were less useful for us. Our agents had one job: facilitate the freight transaction. Since gpt-4o, LLMs have been able to handle what we were asking. Fixating on impossible inputs (garbled inbound emails, voice calls with huge transcription errors) wasn't worth it. Those failures are acceptable. Better to build evals around valid input data.
 
