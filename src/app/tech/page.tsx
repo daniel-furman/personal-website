@@ -43,50 +43,34 @@ export default function Tech() {
   return (
     <SimpleLayout
       title="Tools and gadgets in use."
-      intro="Here&apos;s a big list of all of the things I use to build."
+      intro="Here&apos;s a list of the things I use to ship."
     >
       <div className="space-y-20">
         <ToolsSection title="Workstation">
           <Tool title="MacBook Pro, Apple Silicon">
-            I was using an Intel MacBook Pro prior to this. The
-            difference is night and day!
+            No more fans, no more heat, no more noise.
           </Tool>
           <Tool title="Apple Studio Display">
-            I&apos;m a sucker for a good display, and this
-            one does not disappoint.
+            I&apos;m a sucker for a good display.
           </Tool>
-          <Tool title="Varmilo Minilo 75% with Kailh Presitge Silent Switches">
+          <Tool title="Kinesis Advantage360 Pro with Kailh Quiet Pink Switches">
+            Ergonomic split keyboard, so I don't get carpal tunnel.
+          </Tool>
+          <Tool title="Varmilo Minilo 75% with Kailh Prestige Silent Switches">
             Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH&apos;s blog post </a>.
-          </Tool>
-          <Tool title="Apple Magic Trackpad">
-            Because I can&apos;t use a mouse.
-          </Tool>
-          <Tool title="Herman Miller Sayl Chair">
-            It&apos;s really comfortable.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
-          <Tool title="Cursor">
-            Obviously.
-          </Tool>
           <Tool title="Claude Code">
-            Best command line coding agent, by far.
+            Best CLI coding agent, by far.
           </Tool>
-          <Tool title="Promptfoo">
-            Best package for evals (and free!!).
-          </Tool>
-        </ToolsSection>
-        <ToolsSection title="Design">
-          <Tool title="Figma">
-            Another obvious choice.
+          <Tool title="Cursor">
+            Because I like the name more than "VSCode".
           </Tool>
         </ToolsSection>
-        <ToolsSection title="Productivity">
+        <ToolsSection title="Productivity tools">
           <Tool title="Notion">
-            Pretty decent docs platform. Waiting to try one that&apos;s better.
-          </Tool>
-          <Tool title="Jira">
-            Because I have to.
+            More than docs.
           </Tool>
         </ToolsSection>
       </div>
