@@ -54,7 +54,7 @@ export default function Tech() {
             I&apos;m a sucker for a good display.
           </Tool>
           <Tool title="Kinesis Advantage360 Pro with Kailh Quiet Pink Switches">
-            Ergonomic split keyboard, so I don't get carpal tunnel.
+            Ergonomic split keyboard, so I don&apos;t get carpal tunnel.
           </Tool>
           <Tool title="Varmilo Minilo 75% with Kailh Prestige Silent Switches">
             Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH&apos;s blog post </a>.
@@ -65,7 +65,7 @@ export default function Tech() {
             Best CLI coding agent, by far.
           </Tool>
           <Tool title="Cursor">
-            Because I like the name more than "VSCode".
+            Because you still need an IDE for <em>some</em> things.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Productivity tools">
