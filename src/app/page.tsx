@@ -28,7 +28,7 @@ import image7 from '@/images/photos/image-7.jpg'
 import image8 from '@/images/photos/image-8.jpg'
 import image9 from '@/images/photos/image-9.jpg'
 import image10 from '@/images/photos/image-10.jpg'
-import image11 from '@/images/photos/image-11.jpg'
+import image13 from '@/images/photos/image-13.jpg'
 import image12 from '@/images/photos/image-12.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
@@ -275,10 +275,10 @@ function Resume() {
 
 function Photos() {
   // Arrays that automatically scale - just add new items to extend
-  const images = [image11, image10, image3, image4, image1, image2, image5, image6, image7, image8, image9, image12]
+  const images = [image13, image10, image3, image4, image1, image2, image5, image6, image7, image8, image9, image12]
   const rotations = ['-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2']
   const captions = [
-    'Marin Headlands (Oct 2025)',  
+    'Marin Headlands (Apr 2026)',
     'Palace of Fine Arts (Oct 2025)',
     'Golden Gate (Jan 2025)',
     'Ocean Beach (Feb 2022)',
@@ -310,7 +310,7 @@ function EducationItem({ education }: { education: Education }) {
     <li className="flex gap-4">
       <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md ring-1 shadow-zinc-800/5 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
         {education.logo ? (
-          <Image src={education.logo} alt="" className="h-7 w-7" unoptimized />
+          <Image src={education.logo} alt="" className="h-10 w-10 rounded-full object-cover" unoptimized />
         ) : (
           <AcademicCapIcon className="h-6 w-6 stroke-zinc-400 dark:stroke-zinc-500" />
         )}
@@ -399,9 +399,8 @@ export default async function Home() {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
               👋 there! My name’s Daniel. 
               <br></br><br></br>
-              I’m a data scientist building AI products. I get excited about technology that transforms how work gets done.
+              LLMs, agents, data. Probably looking at traces.
               <br></br><br></br>
-              To get in touch, drop me a line at <a href="mailto:dryanfurman@gmail.com" className="text-zinc-800 underline decoration-zinc-300 underline-offset-2 hover:decoration-zinc-500 dark:text-zinc-100 dark:decoration-zinc-600 dark:hover:decoration-zinc-400">dryanfurman@gmail.com</a>.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
