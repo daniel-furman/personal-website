@@ -219,7 +219,7 @@ function Resume() {
   let resume: Array<Role> = [
     {
       company: 'Replit',
-      title: 'Senior Data Scientist, AI Agent',
+      title: 'Member of Technical Staff',
       logo: logoReplit,
       start: '2026',
       end: {
@@ -230,7 +230,7 @@ function Resume() {
     },
     {
       company: 'Parade.ai',
-      title: 'Lead AI Product Engineer',
+      title: 'Lead AI Engineer',
       logo: logoParade,
       start: '2024',
       end: '2026',
@@ -399,7 +399,7 @@ export default async function Home() {
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
               👋 there! My name’s Daniel. 
               <br></br><br></br>
-              LLMs, agents, data. Probably looking at traces.
+              About me: LLMs, agents, data → Probably looking at traces
               <br></br><br></br>
           </p>
           <div className="mt-6 flex gap-6">
