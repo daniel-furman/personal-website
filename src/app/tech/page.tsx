@@ -61,11 +61,8 @@ export default function Tech() {
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
-          <Tool title="Claude Code">
-            Best CLI coding agent, by far.
-          </Tool>
-          <Tool title="Cursor">
-            Because you still need an IDE for <em>some</em> things.
+          <Tool title="Codex &amp; Claude Code">
+            Currently prefer Codex for deeper coding — Claude Code for analytics and research.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Productivity tools">
