@@ -35,5 +35,13 @@ export function LinkedInIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   )
 }
 
+export function GoogleScholarIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="-2 -2 28 28" aria-hidden="true" {...props}>
+      <path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.94A8 8 0 0 1 12 9a8 8 0 0 1 7.162 4.44L24 9.5z" />
+    </svg>
+  )
+}
+
 
 

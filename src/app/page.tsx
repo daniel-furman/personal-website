@@ -8,6 +8,7 @@ import { Container } from '@/components/Container'
 import { InfinitePhotos } from '@/components/InfinitePhotos'
 import {
   GitHubIcon,
+  GoogleScholarIcon,
   InstagramIcon,
   LinkedInIcon,
   XIcon,
@@ -409,21 +410,26 @@ export default async function Home() {
               <br></br><br></br>
           </p>
           <div className="mt-6 flex gap-6">
-            <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
-            <SocialLink
-              href="https://github.com/daniel-furman" target="_blank" rel="noopener noreferrer"
-              aria-label="Follow on GitHub"
-              icon={GitHubIcon}
-            />
             <SocialLink
               href="https://www.linkedin.com/in/daniel-ryan-furman/" target="_blank" rel="noopener noreferrer"
               aria-label="Follow on LinkedIn"
               icon={LinkedInIcon}
             />
             <SocialLink
+              href="https://github.com/daniel-furman" target="_blank" rel="noopener noreferrer"
+              aria-label="Follow on GitHub"
+              icon={GitHubIcon}
+            />
+            <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
+            <SocialLink
               href="https://instagram.com/dannyfurman" target="_blank" rel="noopener noreferrer"
               aria-label="Follow on Instagram"
               icon={InstagramIcon}
+            />
+            <SocialLink
+              href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=phb-R4cAAAAJ" target="_blank" rel="noopener noreferrer"
+              aria-label="Google Scholar profile"
+              icon={GoogleScholarIcon}
             />
           </div>
         </div>
