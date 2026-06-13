@@ -17,6 +17,7 @@ const projects = [
       'Teamwork and collaboration patterns for AI agents that vibe-code.',
     link: { href: 'https://dl.acm.org/doi/10.1145/3786335.3813211', label: 'dl-acm.papers' },
     logo: logoReplit,
+    logoClassName: 'h-12 w-12 rounded-full object-cover',
   },
   {
     name: 'CalmeRys-78B',
@@ -87,7 +88,7 @@ export default function Projects() {
               <Image
                 src={project.logo}
                 alt=""
-                className="h-8 w-8"
+                className={'logoClassName' in project ? project.logoClassName : 'h-8 w-8'}
                 unoptimized
               />
             </div>
