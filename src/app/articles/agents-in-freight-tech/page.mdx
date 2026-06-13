@@ -5,7 +5,7 @@ export const article = {
   date: '2026-03-03',
   title: '3 Takeaways From Building AI Agents in Freight Tech',
   description:
-    "I spent a couple years building agents in a freight tech startup. Production agents, messy business process, millions of conversations. Here's some takeaways.",
+    "I spent a couple years building agents in a freight tech startup. Here's some takeaways.",
 }
 
 export const metadata = {
@@ -15,13 +15,13 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-I spent a couple years building agents in a freight tech startup. Production agents, messy business process, millions of conversations. Here's some takeaways.
+I spent a couple years building agents in a freight tech startup. Here's some takeaways.
 
 ## See like an LLM.
 
-Once you internalize an LLM's "perspective" context engineering clicks. It becomes a mission of curating a generalizeable/coherent set of instructions alongside pertinent information like memories and supporting details.
+Once you internalize an LLM's "perspective," context engineering clicks. It becomes a matter of curating coherent, generalizable instructions alongside the details each decision needs — memories, supporting context.
 
-We invested in foundational techniques: compacting long email threads so the relevant history survived truncation, packing useful load metadata dynamically so the model saw the right fields for each decision, and maximizing prompt caching to reduce costs.
+A few things we shipped: compacting thread history into summaries carried forward to each inbound email, packing task-relevant metadata dynamically so the model saw the right fields in each decision, and maximizing the share of tokens that hit prompt caching to cut costs at scale.
 
 The payoff was concrete: fewer details dropped across long threads, and more consistent behavior on the inputs that actually mattered.
 
