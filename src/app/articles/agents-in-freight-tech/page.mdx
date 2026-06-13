@@ -5,7 +5,7 @@ export const article = {
   date: '2026-03-03',
   title: '3 Takeaways From Building AI Agents in Freight Tech',
   description:
-    "I spent two years building AI agents at a freight tech startup. Production agents, messy business process, millions of conversations. Here's what stuck.",
+    "I spent a couple years building agents in a freight tech startup. Production agents, messy business process, millions of conversations. Here's some takeaways.",
 }
 
 export const metadata = {
@@ -15,23 +15,21 @@ export const metadata = {
 
 export default (props) => <ArticleLayout article={article} {...props} />
 
-I spent two years building AI agents at a freight tech startup. Production agents, messy business process, millions of conversations. Here's what stuck.
+I spent a couple years building agents in a freight tech startup. Production agents, messy business process, millions of conversations. Here's some takeaways.
 
 ## See like an LLM.
 
-Understanding how tokens flow through an LLM at inference time changes how you build.
+Once you internalize an LLM's "perspective" context engineering clicks. It becomes a mission of curating a generalizeable/coherent set of instructions alongside pertinent information like memories and supporting details.
 
-In building email and voice agents, this was a critical framing. Once you internalize the model's perspective — that everything it knows about a task arrives as tokens in a finite context window — context engineering clicks into place. We invested in foundational techniques: compacting long email threads so the relevant history survived truncation, packing metadata dynamically so the model saw the right fields for each decision, and keeping need-to-haves like prompt caching to hold down latency and cost (🤑💸).
+We invested in foundational techniques: compacting long email threads so the relevant history survived truncation, packing useful load metadata dynamically so the model saw the right fields for each decision, and maximizing prompt caching to reduce costs.
 
 The payoff was concrete: fewer details dropped across long threads, and more consistent behavior on the inputs that actually mattered.
 
-The same intuition applies to task design. If a probabilistic model has to act on a user's behalf at 98%+ accuracy, you really don't want to hand it a complicated, multi-part question — every added requirement is one more place to fail. Strip the task back to the simplest possible ask.
+The same intuition applies to task design. If a probabilistic model has to act on a user's behalf at near perfect accuracy, it is much more sane to hand it as easy a task as possible.
 
 Andrej Karpathy nailed this with a "task contractor" analogy in his 2023 <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A" target="_blank" rel="noopener noreferrer">talk</a> at Microsoft Build. Paraphrasing:
 
 > "Would you hand a contractor clear, complete instructions? Or vague ones that skip key details? The quality of your instructions shapes the quality of the outcome." — Andrej Karpathy
-
-Agents are no different. Even if the use case is complex/open-ended, strive to make your prompting deliberate and aimed at generalization.
 
 ## Great models still make weird mistakes at scale.
 
@@ -49,10 +47,12 @@ One more thing here: we were observability maximalists. Log everything. You can'
 
 ## I'm bullish on UIs that aren't chat.
 
-Chat is a trap for task agents powering business automations. We deployed through email and phone channels instead, for two reasons. First, the work already lived in email and phone calls — meeting the process where it was beat asking everyone to adopt a new surface. Second, a chat box invites open-ended input, which is exactly the complexity you're trying to strip out of the task (see above).
+Chat is, in my opinion, often a trap for agents -- specifically task agents powering business workflow automations. We deployed our agents through email and phone channels instead, for two reasons. First, the work already lived in email and phone calls — meeting the process where it was beat asking everyone to adopt a new surface. Second, a chat box invites open-ended input, which is exactly the complexity you're trying to strip out of the task (see above).
 
-If you do build a chat interface — perhaps the right call for other use cases — remember that you're parking yourself next to ChatGPT and Claude. Users have those benchmarks burned into their brains. Anything that feels even slightly worse is instantly obvious, and painful.
+Same reason why I am bullish on Slackbot agents!
 
-## One more thing.
+If you do build a chat interface — perhaps the right call for some use cases / products — simply remember that you're parking yourself next to ChatGPT and Claude. Users have those benchmarks burned into their brains. Anything that feels even slightly worse is instantly obvious, and painful.
 
-A lot of what I put into practice traces back to a few great blogs (<a href="https://hamel.dev" target="_blank" rel="noopener noreferrer">Hamel Husain</a>, <a href="https://eugeneyan.com" target="_blank" rel="noopener noreferrer">Eugene Yan</a>, <a href="https://x.com/karpathy" target="_blank" rel="noopener noreferrer">Andrej Karpathy</a> the goat 🐐). If you're building agents, the knowledge is out there. Start building.
+## Refs.
+
+Citing a few great blogs (<a href="https://hamel.dev" target="_blank" rel="noopener noreferrer">Hamel Husain</a>, <a href="https://eugeneyan.com" target="_blank" rel="noopener noreferrer">Eugene Yan</a>, <a href="https://x.com/karpathy" target="_blank" rel="noopener noreferrer">Andrej Karpathy</a> the goat 🐐).
