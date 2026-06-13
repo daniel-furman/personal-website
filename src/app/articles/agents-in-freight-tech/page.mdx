@@ -25,7 +25,7 @@ We invested in foundational techniques: compacting long email threads so the rel
 
 The payoff was concrete: fewer details dropped across long threads, and more consistent behavior on the inputs that actually mattered.
 
-The same intuition applies to task design. If a probabilistic model has to act on a user's behalf at near perfect accuracy, it is much more sane to hand it as easy a task as possible.
+The same intuition applies to task design. If a probabilistic model has to act on a user's behalf at near perfect accuracy, it is more sane to hand it easy tasks that are reliably executed on accurately.
 
 Andrej Karpathy nailed this with a "task contractor" analogy in his 2023 <a href="https://www.youtube.com/watch?v=bZQun8Y4L2A" target="_blank" rel="noopener noreferrer">talk</a> at Microsoft Build. Paraphrasing:
 
@@ -48,8 +48,6 @@ One more thing here: we were observability maximalists. Log everything. You can'
 ## I'm bullish on UIs that aren't chat.
 
 Chat is, in my opinion, often a trap for agents -- specifically task agents powering business workflow automations. We deployed our agents through email and phone channels instead, for two reasons. First, the work already lived in email and phone calls — meeting the process where it was beat asking everyone to adopt a new surface. Second, a chat box invites open-ended input, which is exactly the complexity you're trying to strip out of the task (see above).
-
-Same reason why I am bullish on Slackbot agents!
 
 If you do build a chat interface — perhaps the right call for some use cases / products — simply remember that you're parking yourself next to ChatGPT and Claude. Users have those benchmarks burned into their brains. Anything that feels even slightly worse is instantly obvious, and painful.
 
