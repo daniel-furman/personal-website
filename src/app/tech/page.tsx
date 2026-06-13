@@ -48,7 +48,7 @@ export default function Tech() {
       <div className="space-y-20">
         <ToolsSection title="Workstation">
           <Tool title="MacBook Pro, Apple Silicon">
-            No more fans, no more heat, no more noise.
+            Simply the best.
           </Tool>
           <Tool title="Apple Studio Display">
             I&apos;m a sucker for a good display.
@@ -57,12 +57,12 @@ export default function Tech() {
             Ergonomic split keyboard, so I don&apos;t get carpal tunnel.
           </Tool>
           <Tool title="Varmilo Minilo 75% with Kailh Prestige Silent Switches">
-            Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH&apos;s blog post </a>.
+            Inspired by <a href="https://world.hey.com/dhh/finding-acoustical-delight-in-the-thock-aa84f70b" target="_blank" rel="noopener noreferrer">DHH&apos;s blog post</a>.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Development tools">
           <Tool title="Codex &amp; Claude Code">
-            Currently prefer Codex for deeper coding — Claude Code for analytics and research.
+            Currently find myself using Codex for deeper coding and Claude Code for analytics and research.
           </Tool>
         </ToolsSection>
         <ToolsSection title="Productivity tools">
