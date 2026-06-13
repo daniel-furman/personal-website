@@ -9,7 +9,6 @@ import { InfinitePhotos } from '@/components/InfinitePhotos'
 import {
   GitHubIcon,
   GoogleScholarIcon,
-  InstagramIcon,
   LinkedInIcon,
   XIcon,
 } from '@/components/SocialIcons'
@@ -415,11 +414,6 @@ export default async function Home() {
               icon={GitHubIcon}
             />
             <SocialLink href="https://x.com/dryanfurman" target="_blank" rel="noopener noreferrer" aria-label="Follow on X" icon={XIcon} />
-            <SocialLink
-              href="https://instagram.com/dannyfurman" target="_blank" rel="noopener noreferrer"
-              aria-label="Follow on Instagram"
-              icon={InstagramIcon}
-            />
             <SocialLink
               href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=phb-R4cAAAAJ" target="_blank" rel="noopener noreferrer"
               aria-label="Google Scholar profile"
