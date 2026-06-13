@@ -29,11 +29,9 @@ import image7 from '@/images/photos/image-7.jpg'
 import image8 from '@/images/photos/image-8.jpg'
 import image9 from '@/images/photos/image-9.jpg'
 import image10 from '@/images/photos/image-10.jpg'
-import image12 from '@/images/photos/image-12.jpg'
 import image13 from '@/images/photos/image-13.jpg'
 import image14 from '@/images/photos/image-14.jpg'
 import image15 from '@/images/photos/image-15.jpg'
-import image16 from '@/images/photos/image-16.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
@@ -279,24 +277,22 @@ function Resume() {
 
 function Photos() {
   // Arrays that automatically scale - just add new items to extend
-  const images = [image14, image15, image16, image13, image10, image3, image4, image1, image2, image5, image6, image7, image8, image9, image12]
-  const rotations = ['-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
+  const images = [image14, image15, image13, image10, image2, image9, image8, image7, image1, image3, image4, image5, image6]
+  const rotations = ['-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2', 'rotate-2', '-rotate-2']
   const captions = [
     'Lower Yosemite Falls (May 2026)',
     'Yosemite Valley (May 2026)',
-    'Valley Floor, Yosemite (May 2026)',
     'Marin Headlands (Apr 2026)',
     'Palace of Fine Arts (Oct 2025)',
+    'Marin Headlands (Jul 2025)',
+    'Mallorca Cap de Formentor (Jul 2025)',
+    'Marina District (May 2025)',
+    'Outskirts of Seattle (Mar 2025)',
+    'Chestnut Street (Feb 2025)',
     'Golden Gate (Jan 2025)',
     'Ocean Beach (Feb 2022)',
-    'Chestnut Street (Feb 2025)',
-    'Marin Headlands (Jul 2025)',
     'Tank Hill (Jun 2020)',
-    'Big Sur (Dec 2016)',
-    'Outskirts of Seattle (Mar 2025)',
-    'Marina District (May 2025)',
-    'Mallorca Cap de Formentor (Jul 2025)',
-    'Mendocino (Apr 2025)'
+    'Big Sur (Dec 2016)'
   ]
 
   return <InfinitePhotos images={images} rotations={rotations} captions={captions} />
@@ -404,9 +400,7 @@ export default async function Home() {
             Not an AI.
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              👋 there! My name’s Daniel. 
-              <br></br><br></br>
-              About me: LLMs, agents, data → Probably looking at traces
+              👋 there! My name’s Daniel. I like interesting datasets and large neural networks.
               <br></br><br></br>
           </p>
           <div className="mt-6 flex gap-6">

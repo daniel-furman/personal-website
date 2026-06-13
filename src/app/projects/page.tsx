@@ -8,8 +8,16 @@ import logoCosmos from '@/images/logos/cosmos.jpg'
 import logoHelioStream from '@/images/logos/helio-stream.svg'
 import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
 import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoReplit from '@/images/logos/Replit_Logo.png'
 
 const projects = [
+  {
+    name: 'Agent 4: Teamwork and Collaboration for Vibe-Coding',
+    description:
+      'Teamwork and collaboration patterns for AI agents that vibe-code.',
+    link: { href: 'https://dl.acm.org/doi/10.1145/3786335.3813211', label: 'dl-acm.papers' },
+    logo: logoReplit,
+  },
   {
     name: 'CalmeRys-78B',
     description:
