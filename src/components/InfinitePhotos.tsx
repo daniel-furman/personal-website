@@ -57,7 +57,7 @@ export function InfinitePhotos({ images, rotations, captions }: InfinitePhotosPr
   }, [hasScrolled])
 
   return (
-    <div className="mt-16 sm:mt-20 relative">
+    <div className="mt-10 sm:mt-12 relative">
       {/* Left fade */}
       <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-white via-white/50 to-transparent dark:from-zinc-900 dark:via-zinc-900/50 z-10 pointer-events-none" />
       {/* Right fade */}
@@ -86,19 +86,19 @@ export function InfinitePhotos({ images, rotations, captions }: InfinitePhotosPr
           >
             <div
               className={clsx(
-                'relative aspect-9/10 w-44 overflow-hidden rounded-xl bg-zinc-100 sm:w-72 sm:rounded-2xl dark:bg-zinc-800',
+                'relative aspect-9/10 w-44 overflow-hidden rounded-xl bg-zinc-100 sm:w-60 sm:rounded-2xl dark:bg-zinc-800',
                 rotations[imageIndex % rotations.length],
               )}
             >
               <Image
                 src={image}
                 alt=""
-                sizes="(min-width: 640px) 18rem, 11rem"
+                sizes="(min-width: 640px) 15rem, 11rem"
                 className="absolute inset-0 h-full w-full object-cover"
               />
             </div>
             <p className={clsx(
-              'mt-2 text-[0.7rem] text-zinc-400 dark:text-zinc-500 text-center max-w-44 sm:max-w-72',
+              'mt-2 text-[0.7rem] text-zinc-400 dark:text-zinc-500 text-center max-w-44 sm:max-w-60',
               rotations[imageIndex % rotations.length],
             )}>
               {captions[imageIndex % captions.length]}
