@@ -9,7 +9,22 @@ interface Article {
 
 export interface ArticleWithSlug extends Article {
   slug: string
+  external?: string
 }
+
+// Writing published elsewhere, merged into the article lists by date.
+const externalArticles: Array<ArticleWithSlug> = [
+  {
+    title: 'Evaluating and Improving Agent at Scale',
+    description:
+      'How we evaluate and improve the Replit Agent for vibe-coding at scale.',
+    author: 'Daniel Furman',
+    date: '2026-06-23',
+    slug: 'evaluating-and-improving-agent-at-scale',
+    external:
+      'https://replit.com/blog/evaluating-and-improving-agent-at-scale',
+  },
+]
 
 async function importArticle(
   articleFilename: string,
@@ -32,5 +47,7 @@ export async function getAllArticles() {
 
   let articles = await Promise.all(articleFilenames.map(importArticle))
 
-  return articles.sort((a, z) => +new Date(z.date) - +new Date(a.date))
+  return [...articles, ...externalArticles].sort(
+    (a, z) => +new Date(z.date) - +new Date(a.date),
+  )
 }

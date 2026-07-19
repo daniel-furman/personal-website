@@ -3,11 +3,9 @@ import Image from 'next/image'
 
 import { Card } from '@/components/Card'
 import { SimpleLayout } from '@/components/SimpleLayout'
-import logoAnimaginary from '@/images/logos/animaginary.svg'
-import logoCosmos from '@/images/logos/cosmos.jpg'
-import logoHelioStream from '@/images/logos/helio-stream.svg'
-import logoOpenShuttle from '@/images/logos/open-shuttle.svg'
-import logoPlanetaria from '@/images/logos/planetaria.svg'
+import logoAcl from '@/images/logos/acl-logo.svg'
+import logoGitHub from '@/images/logos/github-mark.png'
+import logoHuggingFace from '@/images/logos/huggingface.svg'
 import logoReplit from '@/images/logos/Replit_Logo.png'
 
 const projects = [
@@ -20,47 +18,42 @@ const projects = [
     logoClassName: 'h-12 w-12 rounded-full object-cover',
   },
   {
-    name: 'Evaluating and Improving Agent at Scale',
-    description:
-      'How we evaluate and improve the Replit Agent for vibe-coding at scale.',
-    link: { href: 'https://replit.com/blog/evaluating-and-improving-agent-at-scale', label: 'replit.blog' },
-    logo: logoReplit,
-    logoClassName: 'h-12 w-12 rounded-full object-cover',
-  },
-  {
     name: 'CalmeRys-78B',
     description:
       'Cream of the crop of my LLM finetunes.',
     link: { href: 'https://huggingface.co/dfurman/CalmeRys-78B-Orpo-v0.1', label: 'calmerys-78b.tech' },
-    logo: logoCosmos,
-  },  
+    logo: logoHuggingFace,
+  },
   {
     name: 'Polyglot or Not?',
     description:
       'Measuring multilingual encyclopedic knowledge in foundation models.',
     link: { href: 'https://aclanthology.org/2023.emnlp-main.691/', label: 'emnlp-main-2023.papers' },
-    logo: logoAnimaginary,
+    logo: logoAcl,
   },
   {
     name: 'sft-demos',
     description:
       'Lightweight demos for finetuning LLMs. Powered by transformers and pytorch.',
     link: { href: 'https://github.com/daniel-furman/sft-demos', label: 'sft-demos.tech' },
-    logo: logoOpenShuttle,
-  },  
+    logo: logoGitHub,
+    logoClassName: 'h-12 w-12 rounded-full object-cover',
+  },
   {
     name: 'Species distribution modeling',
     description:
       'A Python tutorial and autoML package for geospatial modeling.',
     link: { href: 'https://github.com/daniel-furman/Python-species-distribution-modeling', label: 'pysdms.tech' },
-    logo: logoPlanetaria,
+    logo: logoGitHub,
+    logoClassName: 'h-12 w-12 rounded-full object-cover',
   },
   {
     name: 'Awesome ChatGPT prompts',
     description:
       'Text clustering: HDBSCAN is probably all you need. ',
     link: { href: 'https://github.com/daniel-furman/awesome-chatgpt-prompts-clustering', label: 'hdbscan.tech' },
-    logo: logoHelioStream,
+    logo: logoGitHub,
+    logoClassName: 'h-12 w-12 rounded-full object-cover',
   }
 ]
 
