@@ -20,6 +20,14 @@ const projects = [
     logoClassName: 'h-12 w-12 rounded-full object-cover',
   },
   {
+    name: 'Evaluating and Improving Agent at Scale',
+    description:
+      'How we evaluate and improve the Replit Agent for vibe-coding at scale.',
+    link: { href: 'https://replit.com/blog/evaluating-and-improving-agent-at-scale', label: 'replit.blog' },
+    logo: logoReplit,
+    logoClassName: 'h-12 w-12 rounded-full object-cover',
+  },
+  {
     name: 'CalmeRys-78B',
     description:
       'Cream of the crop of my LLM finetunes.',
