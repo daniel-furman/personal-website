@@ -10,14 +10,6 @@ import logoReplit from '@/images/logos/Replit_Logo.png'
 
 const projects = [
   {
-    name: 'Evaluating and Improving Agent at Scale',
-    description:
-      'How we evaluate and improve the Replit Agent for vibe-coding at scale.',
-    link: { href: 'https://replit.com/blog/evaluating-and-improving-agent-at-scale', label: 'replit.blog' },
-    logo: logoReplit,
-    logoClassName: 'h-12 w-12 rounded-full object-cover',
-  },
-  {
     name: 'Agent 4: Teamwork and Collaboration for Vibe-Coding',
     description:
       'Teamwork and collaboration patterns for AI agents that vibe-code.',
