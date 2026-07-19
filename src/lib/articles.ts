@@ -15,9 +15,9 @@ export interface ArticleWithSlug extends Article {
 // Writing published elsewhere, merged into the article lists by date.
 const externalArticles: Array<ArticleWithSlug> = [
   {
-    title: 'Evaluating and Improving Agent at Scale',
+    title: 'Closing the Loop: Evaluating and Improving Replit Agent at Scale',
     description:
-      'How we evaluate and improve the Replit Agent for vibe-coding at scale.',
+      'How evaluation at Replit went from launch check to improvement loop — learning from production traces to ship a better Replit Agent, week over week.',
     author: 'Daniel Furman',
     date: '2026-06-23',
     slug: 'evaluating-and-improving-agent-at-scale',
