@@ -371,12 +371,8 @@ export default async function Home() {
             the human in the loop
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              👋 there! My name’s Daniel. I like interesting datasets and large
-              neural networks. I’m currently a member of technical staff at
-              Replit, where I work on evaluating and improving coding agents.
-              Before that, I built LLM systems for freight tech at Parade.ai
-              and led evals for Palo Alto Networks’ customer-support copilot
-              while at West Monroe.
+              👋 there! My name’s Daniel. LLMs, agents, data → Probably looking
+              at traces.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
