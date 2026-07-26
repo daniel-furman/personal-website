@@ -6,6 +6,7 @@ import { SimpleLayout } from '@/components/SimpleLayout'
 import logoAcl from '@/images/logos/acl-logo.svg'
 import logoGitHub from '@/images/logos/github-mark.png'
 import logoHuggingFace from '@/images/logos/huggingface.svg'
+import logoNsf from '@/images/logos/nsf-logo.png'
 import logoReplit from '@/images/logos/Replit_Logo.png'
 
 const projects = [
@@ -44,7 +45,7 @@ const projects = [
     description:
       'A Python tutorial and autoML package for geospatial modeling.',
     link: { href: 'https://github.com/daniel-furman/Python-species-distribution-modeling', label: 'pysdms.tech' },
-    logo: logoGitHub,
+    logo: logoNsf,
     logoClassName: 'h-12 w-12 rounded-full object-cover',
   },
   {
