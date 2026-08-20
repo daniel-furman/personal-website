@@ -193,7 +193,7 @@ function Resume() {
       url: 'https://replit.com',
     },
     {
-      company: 'Parade.ai',
+      company: 'Parade',
       title: 'Founding AI Engineer',
       logo: logoParade,
       start: '2024',
@@ -201,7 +201,7 @@ function Resume() {
       url: 'https://parade.ai',
     },
     {
-      company: 'West Monroe Partners',
+      company: 'West Monroe',
       title: 'Senior Data Scientist',
       logo: logoWestMonroe,
       start: '2022',
@@ -210,7 +210,7 @@ function Resume() {
     },
     {
       company: 'Understory.ai',
-      title: 'ML Engineer',
+      title: 'ML Researcher',
       logo: logoUnderstory,
       start: '2021',
       end: '2022',
@@ -359,11 +359,11 @@ export default async function Home() {
       <Container className="mt-9">
         <div className="max-w-2xl">
           <h1 className="text-4xl font-bold tracking-tight text-zinc-800 sm:text-5xl dark:text-zinc-100">
-            the human in the loop
+            👋 there!
           </h1>
           <p className="mt-6 text-base text-zinc-600 dark:text-zinc-400">
-              👋 there! My name’s Daniel. I like interesting datasets and large
-              neural networks.
+              My name’s Daniel. I like interesting datasets and large neural
+              networks.
           </p>
           <div className="mt-6 flex gap-6">
             <SocialLink
