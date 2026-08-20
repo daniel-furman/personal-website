@@ -210,7 +210,7 @@ function Resume() {
     },
     {
       company: 'Understory.ai',
-      title: 'ML Engineer',
+      title: 'ML Researcher',
       logo: logoUnderstory,
       start: '2021',
       end: '2022',
