@@ -193,7 +193,7 @@ function Resume() {
       url: 'https://replit.com',
     },
     {
-      company: 'Parade.ai',
+      company: 'Parade',
       title: 'Founding AI Engineer',
       logo: logoParade,
       start: '2024',
@@ -201,7 +201,7 @@ function Resume() {
       url: 'https://parade.ai',
     },
     {
-      company: 'West Monroe Partners',
+      company: 'West Monroe',
       title: 'Senior Data Scientist',
       logo: logoWestMonroe,
       start: '2022',
