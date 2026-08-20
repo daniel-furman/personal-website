@@ -43,5 +43,17 @@ export function GoogleScholarIcon(props: React.ComponentPropsWithoutRef<'svg'>) 
   )
 }
 
+export function ResumeIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M5 3a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V7.414A2 2 0 0 0 20.414 6L18 3.586A2 2 0 0 0 16.586 3H5Zm0 1.5h11.586c.133 0 .26.053.354.146l2.414 2.414c.093.094.146.221.146.354V19a.5.5 0 0 1-.5.5H5a.5.5 0 0 1-.5-.5V5a.5.5 0 0 1 .5-.5ZM7 8.75A.75.75 0 0 1 7.75 8h8.5a.75.75 0 0 1 0 1.5h-8.5A.75.75 0 0 1 7 8.75Zm0 3.5A.75.75 0 0 1 7.75 11.5h8.5a.75.75 0 0 1 0 1.5h-8.5a.75.75 0 0 1-.75-.75Zm0 3.5a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75Z"
+      />
+    </svg>
+  )
+}
+
 
 
