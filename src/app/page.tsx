@@ -194,7 +194,7 @@ function Resume() {
     },
     {
       company: 'Parade.ai',
-      title: 'Lead AI Engineer',
+      title: 'Founding AI Engineer',
       logo: logoParade,
       start: '2024',
       end: '2026',
