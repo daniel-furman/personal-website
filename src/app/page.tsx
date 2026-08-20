@@ -10,6 +10,7 @@ import {
   GitHubIcon,
   GoogleScholarIcon,
   LinkedInIcon,
+  ResumeIcon,
   XIcon,
 } from '@/components/SocialIcons'
 import logoReplit from '@/images/logos/Replit_Logo.png'
@@ -34,16 +35,6 @@ import image15 from '@/images/photos/image-15.jpg'
 import { type ArticleWithSlug, getAllArticles } from '@/lib/articles'
 import { formatDate } from '@/lib/formatDate'
 
-function MailIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fillRule="evenodd"
-        d="M6 5a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H6Zm.245 2.187a.75.75 0 0 0-.99 1.126l6.25 5.5a.75.75 0 0 0 .99 0l6.25-5.5a.75.75 0 0 0-.99-1.126L12 12.251 6.245 7.187Z"
-      />
-    </svg>
-  )
-}
 
 function BriefcaseIcon(props: React.ComponentPropsWithoutRef<'svg'>) {
   return (
@@ -203,7 +194,7 @@ function Resume() {
     },
     {
       company: 'Parade.ai',
-      title: 'Lead AI Engineer',
+      title: 'Founding AI Engineer',
       logo: logoParade,
       start: '2024',
       end: '2026',
@@ -238,9 +229,9 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="mailto:dryanfurman@gmail.com?subject=CV Request&body=Hi Daniel,%0D%0A%0D%0AI would like to request a copy of your CV.%0D%0A%0D%0ABest regards," variant="secondary" className="group mt-6 w-full">
-        Contact for CV
-        <MailIcon className="h-4 w-4 ml-2 flex-none" />
+      <Button href="https://daniel-ryan-furman-resume.replit.app/" target="_blank" rel="noopener noreferrer" variant="secondary" className="group mt-6 w-full">
+        View Resume
+        <ResumeIcon className="h-4 w-4 ml-2 flex-none" />
       </Button>
     </div>
   )
@@ -390,6 +381,11 @@ export default async function Home() {
               href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=phb-R4cAAAAJ" target="_blank" rel="noopener noreferrer"
               aria-label="Google Scholar profile"
               icon={GoogleScholarIcon}
+            />
+            <SocialLink
+              href="https://daniel-ryan-furman-resume.replit.app/" target="_blank" rel="noopener noreferrer"
+              aria-label="Resume"
+              icon={ResumeIcon}
             />
           </div>
         </div>
