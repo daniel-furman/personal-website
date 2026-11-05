@@ -11,6 +11,14 @@ import logoReplit from '@/images/logos/Replit_Logo.png'
 
 const projects = [
   {
+    name: 'ViBench 2.0: A Benchmark for Long-Horizon Software Building',
+    description:
+      'Evaluating AI agents on long-horizon software building: 17 full-stack apps, 241 feature requests, 544 test plans.',
+    link: { href: 'https://arxiv.org/abs/2611.05620', label: 'arxiv.papers' },
+    logo: logoReplit,
+    logoClassName: 'h-12 w-12 rounded-full object-cover',
+  },
+  {
     name: 'Agent 4: Teamwork and Collaboration for Vibe-Coding',
     description:
       'Teamwork and collaboration patterns for AI agents that vibe-code.',

@@ -2,7 +2,6 @@ import Image, { type ImageProps } from 'next/image'
 import Link from 'next/link'
 import clsx from 'clsx'
 
-import { Button } from '@/components/Button'
 import { Card } from '@/components/Card'
 import { Container } from '@/components/Container'
 import { InfinitePhotos } from '@/components/InfinitePhotos'
@@ -10,7 +9,6 @@ import {
   GitHubIcon,
   GoogleScholarIcon,
   LinkedInIcon,
-  ResumeIcon,
   XIcon,
 } from '@/components/SocialIcons'
 import logoReplit from '@/images/logos/Replit_Logo.png'
@@ -229,10 +227,6 @@ function Resume() {
           <Role key={roleIndex} role={role} />
         ))}
       </ol>
-      <Button href="https://daniel-ryan-furman-resume.replit.app/" target="_blank" rel="noopener noreferrer" variant="secondary" className="group mt-6 w-full">
-        View Resume
-        <ResumeIcon className="h-4 w-4 ml-2 flex-none" />
-      </Button>
     </div>
   )
 }
@@ -381,11 +375,6 @@ export default async function Home() {
               href="https://scholar.google.com/citations?view_op=list_works&hl=en&hl=en&user=phb-R4cAAAAJ" target="_blank" rel="noopener noreferrer"
               aria-label="Google Scholar profile"
               icon={GoogleScholarIcon}
-            />
-            <SocialLink
-              href="https://daniel-ryan-furman-resume.replit.app/" target="_blank" rel="noopener noreferrer"
-              aria-label="Resume"
-              icon={ResumeIcon}
             />
           </div>
         </div>
